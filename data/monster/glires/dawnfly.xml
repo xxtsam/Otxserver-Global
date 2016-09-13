@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Rat" nameDescription="a rat" race="blood" experience="5" speed="135" manacost="200">
-	<health now="20" max="20"/>
-	<look type="21" corpse="5964"/>
+<monster name="Dawnfly" nameDescription="a dawnfly" race="blood" experience="35" speed="135" manacost="200">
+	<health now="90" max="90"/>
+	<look type="528" corpse="23825"/>
 	<targetchange interval="4000" chance="0"/>
 	<flags>
 	    <flag summonable="1"/>
@@ -26,11 +26,15 @@
 		<element icePercent="-10"/>
 		<element deathPercent="-10"/>
 	</elements>
-	<voices interval="5000" chance="10">
-		<voice sentence="Meep!"/>
-	</voices>
 	<loot>
-		<item id="2148" countmax="4" chance="100000"/><!-- gold coin -->
-		<item id="2696" chance="39410"/><!-- cheese -->
+		<item id="2148" countmax="12" chance="100000"/><!-- gold coin -->
+		<item id="2544" countmax="12" chance="80000"/><!-- arrows -->
+		<item id="2545" countmax="8" chance="80000"/><!-- poison arrows -->
+		<item id="23839" countmax="15" chance="80000"/><!-- simple arrows -->
+		<item id="19738" countmax="1" chance="80000"/><!-- damselfly wing -->
+		<item id="19743" chance="4930" /><!-- damselfly eye -->
+		<item id="2485" chance="4930" /><!-- doublet -->
+		<item id="7618" chance="4930" /><!-- health potion -->
+		<item id="7620" chance="4930" /><!-- mana potion -->
 	</loot>
 </monster>
