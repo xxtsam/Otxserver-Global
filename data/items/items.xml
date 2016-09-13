@@ -112,6 +112,9 @@
 	<item id="23939" article="a" name="stairs">
 		<attribute key="floorchange" value="north" />
 	</item>
+	<item id="24812" article="a" name="stairs">
+		<attribute key="floorchange" value="north" />
+	</item>
 	<item id="424" article="a" name="stone tile" />
 	<item fromid="425" toid="426" article="a" name="stone tile">
 		<attribute key="description" value="It seems to be a switch." />
