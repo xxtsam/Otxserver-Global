@@ -7,3 +7,6 @@ Nós utilizamos o [Issue Tracker do Github](https://github.com/malucooo/Otxserve
 
 # Ajudando no desenvolvimento
 Para ajudar o desenvolvimento do projeto, por favor, verifique nossa página guia de Suporte ao Desenvolvimento. Requisitamos que as colaborações sejam feitas mediante [Pull Requests no Github](https://github.com/malucooo/Otxserver-Global/pulls). Pedimos também que seja explícitado as alterações/features que foram adicionadas e implementadas na requisição.
+
+# Perguntas e Suporte Geral
+Issues/Problemas não deve ser utilizado como forma de suporte para a utilização/criação de servidores fazendo uso do projeto, mas como um ferramenta utilizada para corrigir bugs e problemas que existam exclusivamente no projeto. Dessa forma, para suporte relacionado à utilização do projeto para criação de servidores, perguntas, etc, por favor, visite o [post oficial no Tibia King](http://www.tibiaking.com/forum/forums/topic/68411-otxserver-37-global-75-full-com-otherworld-pvp-expert-novo-castsystem-npcs-usando-bank-balance-tibia-store-e-varias-outros-sistema) relacionado ao projeto.
