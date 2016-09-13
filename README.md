@@ -2,6 +2,9 @@
 
 Servidor de Tibia mantido por Malucooo. O servidor usa como base Otxserver 3.7 e também TFS 1.2.
 
+# Clonando o Projeto
+Caso você tenha interesse em apenas Clonar o projeto, por favor, tenha certeza de possuir o git-lfs. Para tanto, verifique nosso Guia de Git e GitLfs.
+
 # Issues / Problemas
 Nós utilizamos o [Issue Tracker do Github](https://github.com/malucooo/Otxserver-Global/issues) e, dessa forma, pedimos que leiam nossa [página da wiki relacionada à Issues](https://github.com/malucooo/Otxserver-Global/wiki/Issues) antes de prosseguir com a submissão de Issues.
 
