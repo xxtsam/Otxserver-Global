@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Rat" nameDescription="a rat" race="blood" experience="5" speed="135" manacost="200">
-	<health now="20" max="20"/>
-	<look type="21" corpse="5964"/>
+<monster name="Brittle Skeleton" nameDescription="a brittle skeleton" race="undead" experience="35" speed="150" manacost="300">
+	<health now="50" max="50"/>
+	<look type="33" corpse="5972"/>
 	<targetchange interval="4000" chance="0"/>
 	<flags>
 	    <flag summonable="1"/>
@@ -17,20 +17,28 @@
 		<flag runonhealth="5"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="10" attack="10"/>
+		<attack name="melee" interval="2000" min="0" max="-17"/>
+                <attack name="lifedrain" interval="2000" chance="15" range="1" min="-7" max="-13"/>
 	</attacks>
-	<defenses armor="5" defense="5"/>
+	<defenses armor="10" defense="10"/>
 	<elements>
-		<element earthPercent="25"/>
-		<element holyPercent="20"/>
-		<element icePercent="-10"/>
-		<element deathPercent="-10"/>
+		<element holyPercent="-5"/>
 	</elements>
-	<voices interval="5000" chance="10">
-		<voice sentence="Meep!"/>
-	</voices>
+	<immunities>
+		<immunity death="1"/>
+		<immunity drown="1"/>
+		<immunity lifedrain="1"/>
+	</immunities>
 	<loot>
-		<item id="2148" countmax="4" chance="100000"/><!-- gold coin -->
-		<item id="2696" chance="39410"/><!-- cheese -->
+		<item id="2148" countmax="5" chance="100000"/><!-- gold coin -->
+		<item id="2230" chance="49100"/><!-- bone -->
+		<item id="12437" chance="10000"/><!-- pelvis bone -->
+		<item id="2050" chance="10000"/><!-- torch -->
+		<item id="2388" chance="4820"/><!-- hatchet -->
+		<item id="2398" chance="4850"/><!-- mace -->
+		<item id="2376" chance="1920"/><!-- sword -->
+		<item id="2484" chance="1920"/><!-- studded armor -->
+	        <item id="2473" chance="1920"/><!-- Viking Helmet -->
+	        <item id="2511" chance="2000"/><!-- Brass Shield -->
 	</loot>
 </monster>
