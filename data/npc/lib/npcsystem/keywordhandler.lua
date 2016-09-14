@@ -1,6 +1,7 @@
 -- Advanced NPC System by Jiddo
 
 if KeywordHandler == nil then
+
 	KeywordNode = {
 		keywords = nil,
 		callback = nil,
@@ -176,9 +177,9 @@ if KeywordHandler == nil then
 	-- Tries to process the given message using the node parameter's children and calls the node's callback function if found.
 	--	Returns the childNode which processed the message or nil if no such node was found.
 	function KeywordHandler:processNodeMessage(node, cid, message)
-		local messageLower = string.lower(message)
-		for i, childNode in pairs(node.children) do
-			if childNode:checkMessage(messageLower) then
+		local messageLower = message:lower()
+		for _, childNode in pairs(node.children) do
+			if childNode:checkMessage(cid, messageLower) then
 				local oldLast = self.lastNode[cid]
 				self.lastNode[cid] = childNode
 				childNode.parent = node -- Make sure node is the parent of childNode (as one node can be parent to several nodes).
@@ -212,12 +213,12 @@ if KeywordHandler == nil then
 		return self:getRoot():addAliasKeyword(keys)
 	end
 
-	-- Moves the current position in the keyword hierarchy steps upwards. Steps defalut value = 1.
+	-- Moves the current position in the keyword hierarchy count steps upwards. Count defalut value = 1.
+	--	This function MIGHT not work properly yet. Use at your own risk.
 	function KeywordHandler:moveUp(cid, steps)
 		if steps == nil or type(steps) ~= "number" then
 			steps = 1
 		end
-
 		for i = 1, steps do
 			if self.lastNode[cid] == nil then
 				return nil
