@@ -167,6 +167,10 @@ function Player:onTurn(direction)
 end
 
 function Player:onTradeRequest(target, item)
+	if isInArray({1738, 1740, 1747, 1748, 1749, 8766}, item.itemid) and item.actionid > 0 or item.actionid == 5640 then
+		self:sendCancelMessage('Sorry, not possible.')
+		return false
+	end
 	return true
 end
 
