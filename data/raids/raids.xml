@@ -4,10 +4,10 @@
 	<raid name="Orc SamBP" file="Special/OrcSamBP.xml" interval2="500" margin="180" />
 	<raid name="Lightbearer Quest" file="Special/Lightbearer Quest.xml" interval2="500" margin="180" />
 	<raid name="Dr.White" file="Special/Dr.White.xml" interval2="500" margin="180" />
-	<raid name="Draptor" file="special/Draptor.xml" interval2="250" margin="60"/>
-	<raid name="Midnight Panther" file="special/Midnight Panther.xml" interval2="250" margin="60"/>
-	<raid name="Undead Cavebear" file="special/Undead Cavebear.xml" interval2="250" margin="60"/>
-	<raid name="Titanica" file="special/Titanica.xml" interval2="250" margin="60"/>	
+	<raid name="Draptor" file="Special/Draptor.xml" interval2="250" margin="60"/>
+	<raid name="Midnight Panther" file="Special/Midnight Panther.xml" interval2="250" margin="60"/>
+	<raid name="Undead Cavebear" file="Special/Undead Cavebear.xml" interval2="250" margin="60"/>
+	<raid name="Titanica" file="Special/Titanica.xml" interval2="250" margin="60"/>	
 
 	<!-- Ab'Dendriel -->
 	<raid name="Badger" file="Ab'Dendriel/Badger.xml" interval2="500" margin="180" />
