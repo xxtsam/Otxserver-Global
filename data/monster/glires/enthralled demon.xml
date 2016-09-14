@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Rat" nameDescription="a rat" race="blood" experience="5" speed="135" manacost="200">
+<monster name="Enthralled Demon" nameDescription="a enthralled demon" race="fire" experience="0" speed="280" manacost="0">
 	<health now="20" max="20"/>
-	<look type="21" corpse="5964"/>
+	<look type="35" corpse="5995"/>
 	<targetchange interval="4000" chance="0"/>
 	<flags>
 	    <flag summonable="1"/>
@@ -19,18 +19,11 @@
 	<attacks>
 		<attack name="melee" interval="2000" skill="10" attack="10"/>
 	</attacks>
-	<defenses armor="5" defense="5"/>
+	<defenses armor="10" defense="10"/>
 	<elements>
 		<element earthPercent="25"/>
 		<element holyPercent="20"/>
 		<element icePercent="-10"/>
 		<element deathPercent="-10"/>
 	</elements>
-	<voices interval="5000" chance="10">
-		<voice sentence="Meep!"/>
-	</voices>
-	<loot>
-		<item id="2148" countmax="4" chance="100000"/><!-- gold coin -->
-		<item id="2696" chance="39410"/><!-- cheese -->
-	</loot>
 </monster>
