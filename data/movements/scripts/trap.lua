@@ -1,7 +1,7 @@
 local traps = {
 	[1510] = {transformTo = 1511, damage = {-50, -100}},
 	[1513] = {damage = {-50, -100}},
-	[2579] = {transformTo = 2578, damage = {-15, -30}, ignorePlayer = true},
+	[2579] = {transformTo = 2578, damage = {-15, -30}, ignorePlayer = false},
 	[4208] = {transformTo = 4209, damage = {-15, -30}, type = COMBAT_EARTHDAMAGE}
 }
 

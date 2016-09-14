@@ -113,7 +113,7 @@ EquipObject.StackAdd = function(player, item, slotP, isStackable)
 				_item:remove()
 			end
 		end
-		
+
 		player:addItem(itemId, count, true, 1, slotP)
 	else
 		item:moveToSlot(player, slotP)

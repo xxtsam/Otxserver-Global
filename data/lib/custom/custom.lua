@@ -33,6 +33,16 @@ function doCreatureSayWithRadius(cid, text, type, radiusx, radiusy, position)
 	end
 end
 
+function Player.getBlessings(self)
+	local blessings = 0
+	for i = 1, 5 do
+		if self:hasBlessing(i) then
+			blessings = blessings + 1
+		end
+	end
+	return blessings
+end
+
 function getBlessingsCost(level)
 	if level <= 30 then
 		return 2000
@@ -492,4 +502,67 @@ function Player.getExhaustion(self, value)
 	end
 
 	return storage - os.time()
+end
+
+function Player.allowMovement(self, allow)
+	return self:setStorageValue(STORAGE.blockMovementStorage, allow and -1 or 1)
+end
+
+function Player.checkGnomeRank(self)
+	local points = self:getStorageValue(STORAGE.BIGFOOTBURDEN.RANK)
+	local questProgress = self:getStorageValue(STORAGE.BIGFOOTBURDEN.QUESTLINE)
+	if points >= 30 and points < 120 then
+		if questProgress == 14 then
+			self:setStorageValue(STORAGE.BIGFOOTBURDEN.QUESTLINE, 15)
+			self:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+		end
+		self:addAchievement('Gnome Little Helper')
+	elseif points >= 120 and points < 480 then
+		if questProgress == 15 then
+			self:setStorageValue(STORAGE.BIGFOOTBURDEN.QUESTLINE, 16)
+			self:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+		end
+		self:addAchievement('Gnome Friend')
+	elseif points >= 480 and points < 1440 then
+		if questProgress == 16 then
+			self:setStorageValue(STORAGE.BIGFOOTBURDEN.QUESTLINE, 17)
+			self:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+		end
+		self:addAchievement('Gnomelike')
+	elseif points >= 1440 then
+		if questProgress == 17 then
+			self:setStorageValue(STORAGE.BIGFOOTBURDEN.QUESTLINE, 18)
+			self:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+		end
+		self:addAchievement('Honorary Gnome')
+	end
+	return true
+end
+
+function Player.getCookiesDelivered(self)
+	local storage, amount = {
+		STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.SIMONTHEBEGGAR, STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.MARKWIN, STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.ARIELLA,
+		STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.HAIRYCLES, STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.DJINN, STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.AVARTAR,
+		STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.ORCKING, STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.LORBAS, STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.WYDA,
+		STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.HJAERN
+	}, 0
+	for i = 1, #storage do
+		if self:getStorageValue(storage[i]) == 1 then
+			amount = amount + 1
+		end
+	end
+	return amount
+end
+
+function Player.hasAllowMovement(self)
+	return self:getStorageValue(STORAGE.blockMovementStorage) ~= 1
+end
+
+function Player.hasRookgaardShield(self)
+	-- Wooden Shield, Studded Shield, Brass Shield, Plate Shield, Copper Shield
+	return self:getItemCount(2512) > 0
+		or self:getItemCount(2526) > 0
+		or self:getItemCount(2511) > 0
+		or self:getItemCount(2510) > 0
+		or self:getItemCount(2530) > 0
 end

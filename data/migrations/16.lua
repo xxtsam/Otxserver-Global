@@ -1,5 +1,9 @@
 function onUpdateDatabase()
-	print("> Updating database to version 19 (casting system)")
-	db.query("CREATE TABLE IF NOT EXISTS `live_casts` ( `player_id` int(11) NOT NULL, `cast_name` varchar(255) NOT NULL, `password` boolean NOT NULL DEFAULT false, `description` varchar(255), `spectators` smallint(5) DEFAULT 0, UNIQUE KEY `player_id_2` (`player_id`), FOREIGN KEY (`player_id`) REFERENCES `players`(`id`) ON DELETE CASCADE ) ENGINE=InnoDB;")
+	print("> Updating database to version 17 (fixing primary key in account ban history)")
+	db.query("ALTER TABLE `account_ban_history` DROP FOREIGN KEY `account_ban_history_ibfk_1`")
+	db.query("ALTER TABLE `account_ban_history` DROP PRIMARY KEY")
+	db.query("ALTER TABLE `account_ban_history` ADD `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST")
+	db.query("ALTER TABLE `account_ban_history` ADD INDEX (`account_id`)")
+	db.query("ALTER TABLE `account_ban_history` ADD FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE")
 	return true
 end

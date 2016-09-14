@@ -1,6 +1,6 @@
 function onUpdateDatabase()
-	print("> Updating database to version 21 (Store system)")
-	db.query("ALTER TABLE `accounts` ADD COLUMN `coins` INT(12) NOT NULL DEFAULT '0' AFTER `premdays`")
-	db.query([[CREATE TABLE IF NOT EXISTS `store_history` ( `account_id` int(11) NOT NULL, `mode` smallint(2) NOT NULL DEFAULT '0', `description` VARCHAR(3500) NOT NULL, `coin_amount` int(12) NOT NULL, `time` bigint(20) unsigned NOT NULL, KEY `account_id` (`account_id`), FOREIGN KEY (`account_id`) REFERENCES `accounts`(`id`) ON DELETE CASCADE ) ENGINE=InnoDB;]])
+	print("> Updating database to version 19 (update on depot chests)")
+	db.query("UPDATE `player_depotitems` SET `pid` = 17 WHERE `pid` = 0")
+	db.query("UPDATE `player_depotitems` SET `pid` = 17 WHERE `pid` > 17")
 	return true
 end
