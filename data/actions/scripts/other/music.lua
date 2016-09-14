@@ -17,6 +17,7 @@ local MusicEffect = {
 	[2085] = CONST_ME_SOUND_BLUE, 	--Harp
 	[2332] = CONST_ME_SOUND_GREEN, 	--Waldo's Post Horn
 	[2364] = CONST_ME_SOUND_GREEN, 	--Post Horn
+
 	-- non movable instruments
 	[2367] = CONST_ME_SOUND_GREEN, 	--Drum
 	[2368] = CONST_ME_SOUND_GREEN, 	--Simple Fanfare
@@ -26,7 +27,6 @@ local MusicEffect = {
 	[2372] = CONST_ME_SOUND_GREEN, 	--Lyre
 	[2373] = CONST_ME_SOUND_BLUE, 	--Panpipes
 	[2374] = CONST_ME_SOUND_GREEN, 	--Wooden Flute
-	--
 	[3951] = CONST_ME_SOUND_BLUE, 	--Bongo Drum
 	[3952] = CONST_ME_SOUND_GREEN, 	--Didgeridoo
 	[3953] = CONST_ME_SOUND_RED, 	--War Drum

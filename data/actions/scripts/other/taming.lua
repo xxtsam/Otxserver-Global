@@ -308,7 +308,7 @@ local config = {
 		},
 		success = {sound = 'Grrrrrrr', text = 'You tamed the shock head.'}
 	},
-	[23810]	= {
+	[23810] = {
 		name = 'noble lion',
 		id = 40,
 		type = TYPE_MONSTER,
@@ -319,7 +319,7 @@ local config = {
 		},
 		success = {sound = 'Grrrrrrr', text = 'You tamed the noble lion.'}
 	},
-	[23557]	= {
+	[23557] = {
 		name = 'walker',
 		id = 43,
 		type = TYPE_MONSTER,
