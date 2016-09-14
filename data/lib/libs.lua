@@ -8,7 +8,7 @@ dofile('data/lib/core/core.lua')
 dofile('data/lib/compat/compat.lua')
 
 -- Custom Systems
-dofile('data/lib/custom/custom.lua')
+dofile('data/lib/custom/customFunctions.lua')
 dofile('data/lib/custom/storages.lua')
 dofile('data/lib/rewardsystem/rewardboss.lua')
 dofile('data/lib/core/battlefield.lua')
