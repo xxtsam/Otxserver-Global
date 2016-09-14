@@ -89,7 +89,7 @@
 
 	<!-- Demon Lords -->
 	<monster name="Horadron" file="bosses/horadron.xml"/>
-	<monster name="Orshabaal" file="Demonlords/Orshabaal.xml"/>
+	<monster name="Orshabaal" file="demonlords/Orshabaal.xml"/>
 	<monster name="Prince Drazzak" file="bosses/Prince Drazzak.xml"/>
 	<monster name="Terofar" file="bosses/terofar.xml"/>
 	<monster name="Zavarash" file="demons/zavarash.xml"/>
