@@ -1,5 +1,3 @@
--- Advanced NPC System by Jiddo
-
 if NpcHandler == nil then
 	local storage, duration = 1.4, 0.8
 	-- Constant talkdelay behaviors.
@@ -71,7 +69,7 @@ if NpcHandler == nil then
 		talkStart = nil,
 		idleTime = 120,
 		talkRadius = 3,
-		talkDelayTime = 1, -- Seconds to delay outgoing messages.
+		talkDelayTime = 2, -- Seconds to delay outgoing messages.
 		talkDelay = nil,
 		callbackFunctions = nil,
 		modules = nil,
