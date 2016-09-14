@@ -19,12 +19,12 @@ function onSay(player, words, param)
 		return false
 	end
 
-	if target:getAccountType() > player:getAccountType() then
+	if player:getAccountType() < ACCOUNT_TYPE_GOD  then
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Cannot perform action.')
 		return false
 	end
 
-	for i = 1, 47 do
+	for i = 1, 90 do
 		target:addMount(i)
 	end
 

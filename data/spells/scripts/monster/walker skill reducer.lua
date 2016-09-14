@@ -66,6 +66,6 @@ combat[i]:setCallback(CALLBACK_PARAM_TARGETTILE, "onTargetTile")
 
 end
 
-function onCastSpell(creature, var)
-	return combat[math.random(45, 60)]:execute(creature, var)
+function onCastSpell(creature, variant)
+	return combat[math.random(45, 60)]:execute(creature, variant)
 end

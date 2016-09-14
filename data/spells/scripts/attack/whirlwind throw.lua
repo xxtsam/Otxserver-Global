@@ -5,9 +5,10 @@ combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_WEAPONTYPE)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_USECHARGES, true)
 
-function onGetFormulaValues(cid, skill, attack, factor)
-	local skillTotal, levelTotal = skill * attack, getPlayerLevel(cid) / 5
-	return -(((skillTotal * 0.01) + 1) + (levelTotal)), -(((skillTotal * 0.03) + 6) + (levelTotal))
+function onGetFormulaValues(player, skill, attack, factor)
+	local min = (player:getLevel() / 5) + (skill * attack * 0.01) + 1
+	local max = (player:getLevel() / 5) + (skill * attack * 0.03) + 6
+	return -min, -max
 end
 
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")

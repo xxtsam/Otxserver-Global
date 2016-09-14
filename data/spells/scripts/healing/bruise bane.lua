@@ -7,8 +7,8 @@ combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 function onGetFormulaValues(player, level, maglevel)
 	level = math.min(level, 20)
 	maglevel = math.min(maglevel, 20)
-	local min = (level / 5) + (maglevel * 1.4) + 19
-	local max = (level / 5) + (maglevel * 1.8) + 29
+	local min = (level / 5) + (maglevel * 1.4) + 8
+	local max = (level / 5) + (maglevel * 1.8) + 11
 	return min, max
 end
 

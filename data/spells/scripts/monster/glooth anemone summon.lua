@@ -7,7 +7,7 @@ combat:setArea(area)
 
 local maxsummons = 1
 
-function onCastSpell(creature, var)
+function onCastSpell(creature, variant)
 	local summoncount = creature:getSummons()
 	if #summoncount < 1 then
 		for i = 1, maxsummons - #summoncount do
@@ -18,5 +18,5 @@ function onCastSpell(creature, var)
 			mid:setMaster(creature)
 		end
 	end
-	return combat:execute(creature, var)
+	return combat:execute(creature, variant)
 end

@@ -6,8 +6,5 @@ combat:setParameter(COMBAT_PARAM_CREATEITEM, ITEM_FIREFIELD_PVP_FULL)
 combat:setArea(createCombatArea(AREA_WALLFIELD, AREADIAGONAL_WALLFIELD))
 
 function onCastSpell(creature, variant, isHotkey)
-if getPlayerStorageValue(creature, 357812) == 1  or getPlayerStorageValue(creature, 357819) == 1 then
-        return false
-    end
 	return combat:execute(creature, variant)
 end
