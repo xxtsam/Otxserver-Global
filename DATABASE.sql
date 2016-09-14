@@ -588,7 +588,7 @@ CREATE TABLE `server_config` (
 --
 
 INSERT INTO `server_config` (`config`, `value`) VALUES
-('db_version', '20'),
+('db_version', '23'),
 ('motd_hash', 'bee004aa2da0bd5c470c0eefc4e1058d0e33aad6'),
 ('motd_num', '1'),
 ('players_record', '0');
