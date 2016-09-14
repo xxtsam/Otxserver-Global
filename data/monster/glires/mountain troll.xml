@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Rat" nameDescription="a rat" race="blood" experience="5" speed="135" manacost="200">
-	<health now="20" max="20"/>
-	<look type="21" corpse="5964"/>
+<monster name="Mountain Troll" nameDescription="a mountain troll" race="blood" experience="12" speed="170" manacost="290">
+	<health now="30" max="30"/>
+	<look type="15" corpse="5960"/>
 	<targetchange interval="4000" chance="0"/>
 	<flags>
 	    <flag summonable="1"/>
@@ -14,23 +14,29 @@
 		<flag canpushcreatures="0"/>
 		<flag targetdistance="1"/>
 		<flag staticattack="90"/>
-		<flag runonhealth="5"/>
+		<flag runonhealth="15"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="10" attack="10"/>
+		<attack name="melee" interval="2000" min="0" max="-15"/>
 	</attacks>
-	<defenses armor="5" defense="5"/>
+	<defenses armor="10" defense="10"/>
 	<elements>
-		<element earthPercent="25"/>
-		<element holyPercent="20"/>
-		<element icePercent="-10"/>
+		<element energyPercent="25"/>
+		<element holyPercent="10"/>
+		<element earthPercent="-10"/>
 		<element deathPercent="-10"/>
 	</elements>
-	<voices interval="5000" chance="10">
-		<voice sentence="Meep!"/>
-	</voices>
 	<loot>
-		<item id="2148" countmax="4" chance="100000"/><!-- gold coin -->
-		<item id="2696" chance="39410"/><!-- cheese -->
+		<item id="2148" countmax="12" chance="65300"/>	<!-- gold coin -->
+		<item id="2380" chance="18000"/>				<!-- hand axe -->
+		<item id="2666" chance="15000"/>				<!-- meat -->
+		<item id="2389" chance="13000"/>				<!-- spear -->
+		<item id="2461" chance="12000"/>				<!-- leather helmet -->
+		<item id="2643" chance="10000"/>				<!-- leather boots -->
+		<item id="2120" chance="7950"/>					<!-- rope -->
+		<item id="2448" chance="5000"/>					<!-- studded club -->
+		<item id="2512" chance="4730"/>					<!-- wooden shield -->
+		<item id="10606" chance="1000"/>				<!-- bunch of troll hair -->
+		<item id="2170" chance="80"/>					<!-- silver amulet -->
 	</loot>
 </monster>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Rat" nameDescription="a rat" race="blood" experience="5" speed="135" manacost="200">
-	<health now="20" max="20"/>
-	<look type="21" corpse="5964"/>
+<monster name="Meadow Strider" nameDescription="a meadow strider" race="blood" experience="50" speed="135" manacost="200">
+	<health now="100" max="100"/>
+	<look type="530" corpse="23821"/>
 	<targetchange interval="4000" chance="0"/>
 	<flags>
 	    <flag summonable="1"/>
@@ -31,6 +31,15 @@
 	</voices>
 	<loot>
 		<item id="2148" countmax="4" chance="100000"/><!-- gold coin -->
-		<item id="2696" chance="39410"/><!-- cheese -->
+		<item id="8713" chance="39410"/><!-- fish -->
+		<item id="3976" chance="39410"/><!-- worms -->
+		<item id="2666" chance="39410"/><!-- meat -->
+		<item id="2397" chance="3000"/><!-- longssword -->
+		<item id="2398" chance="3000"/><!-- mace -->
+		<item id="19742" chance="3000"/><!-- stalker feather -->
+		<item id="2388" chance="3000"/><!-- hatchet -->
+		<item id="19741" chance="3000"/><!-- stalker beak -->
+		<item id="2120" chance="5412"/><!-- rope -->
+		<item id="7732" chance="5412"/><!-- seeds -->		
 	</loot>
 </monster>
