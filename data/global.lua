@@ -1,5 +1,11 @@
 dofile('data/lib/libs.lua')
 
+NOT_MOVEABLE_ACTION = 8000
+PARTY_PROTECTION = 1 -- Set to 0 to disable.
+ADVANCED_SECURE_MODE = 1 -- Set to 0 to disable.
+
+STORAGEVALUE_PROMOTION = 30018
+
 ropeSpots = {384, 418, 8278, 8592, 13189, 14435, 14436, 15635, 19518}
 
 doors = {
@@ -62,58 +68,8 @@ levelDoors = {
 
 keys = {2086, 2087, 2088, 2089, 2090, 2091, 2092, 10032}
 
-function doCreatureSayWithRadius(cid, text, type, radiusx, radiusy, position)
-	if not position then
-		position = Creature(cid):getPosition()
-	end
-
-	local spectators, spectator = Game.getSpectators(position, false, true, radiusx, radiusx, radiusy, radiusy)
-	for i = 1, #spectators do
-		spectator = spectators[i]
-		spectator:say(text, type, false, spectator, position)
-	end
-end
-
-function getBlessingsCost(level)
-	if level <= 30 then
-		return 2000
-	elseif level >= 120 then
-		return 20000
-	else
-		return (level - 20) * 200
-	end
-end
-
-function getPvpBlessingCost(level)
-	if level <= 30 then
-		return 2000
-	elseif level >= 270 then
-		return 50000
-	else
-		return (level - 20) * 200
-	end
-end
-
-function isInRange(pos, fromPos, toPos)
-	return pos.x >= fromPos.x and pos.y >= fromPos.y and pos.z >= fromPos.z and pos.x <= toPos.x and pos.y <= toPos.y and pos.z <= toPos.z
-end
-
-function isNumber(str)
-	return tonumber(str) ~= nil
-end
-
-function getTibianTime()
-	local worldTime = getWorldTime()
-	local hours = math.floor(worldTime / 60)
-
-	local minutes = worldTime % 60
-	if minutes < 10 then
-		minutes = '0' .. minutes
-	end
-	return hours .. ':' .. minutes
-end
-
 -- Stamina
 if nextUseStaminaTime == nil then
 	nextUseStaminaTime = {}
 end
+

@@ -122,6 +122,17 @@ function isInRange(pos, fromPos, toPos)
 	return pos.x >= fromPos.x and pos.y >= fromPos.y and pos.z >= fromPos.z and pos.x <= toPos.x and pos.y <= toPos.y and pos.z <= toPos.z
 end
 
+function getTibianTime()
+	local worldTime = getWorldTime()
+	local hours = math.floor(worldTime / 60)
+
+	local minutes = worldTime % 60
+	if minutes < 10 then
+		minutes = '0' .. minutes
+	end
+	return hours .. ':' .. minutes
+end
+
 function getAccountNumberByPlayerName(name)
 	local player = Player(name)
 	if player ~= nil then
