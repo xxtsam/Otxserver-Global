@@ -1,7 +1,7 @@
 -- Advanced NPC System by Jiddo
 
 if NpcHandler == nil then
-local storage, duration = 1.4, 0.8
+	local storage, duration = 1.4, 0.8
 	-- Constant talkdelay behaviors.
 	TALKDELAY_NONE = 0 -- No talkdelay. Npc will reply immedeatly.
 	TALKDELAY_ONTHINK = 1 -- Talkdelay handled through the onThink callback function. (Default)
@@ -27,7 +27,7 @@ local storage, duration = 1.4, 0.8
 	MESSAGE_NEEDMORESPACE = 14 -- When the player has some space to buy an item, but not enough space
 	MESSAGE_IDLETIMEOUT = 15 -- When the player has been idle for longer then idleTime allows.
 	MESSAGE_WALKAWAY = 16 -- When the player walks out of the talkRadius of the npc.
-	MESSAGE_DECLINE	 = 17 -- When the player says no to something.
+	MESSAGE_DECLINE = 17 -- When the player says no to something.
 	MESSAGE_SENDTRADE = 18 -- When the npc sends the trade window to the player
 	MESSAGE_NOSHOP = 19 -- When the npc's shop is requested but he doesn't have any
 	MESSAGE_ONCLOSESHOP = 20 -- When the player closes the npc's shop window
@@ -37,7 +37,7 @@ local storage, duration = 1.4, 0.8
 
 	-- Constant indexes for callback functions. These are also used for module callback ids.
 	CALLBACK_CREATURE_APPEAR = 1
-	CALLBACK_CREATURE_DISAPPEAR = 2
+	CALLBACK_CREATURE_DISAPPEAR	= 2
 	CALLBACK_CREATURE_SAY = 3
 	CALLBACK_ONTHINK = 4
 	CALLBACK_GREET = 5
@@ -52,7 +52,7 @@ local storage, duration = 1.4, 0.8
 	CALLBACK_ONTRADEREQUEST = 20
 
 	-- Addidional module callback ids
-	CALLBACK_MODULE_INIT	 = 12
+	CALLBACK_MODULE_INIT = 12
 	CALLBACK_MODULE_RESET = 13
 
 	-- Constant strings defining the keywords to replace in the default messages.
@@ -157,7 +157,7 @@ local storage, duration = 1.4, 0.8
 
 	-- Function used to verify if npc is focused to certain player
 	function NpcHandler:isFocused(focus)
-		for _, v in pairs(self.focuses) do
+		for k,v in pairs(self.focuses) do
 			if v == focus then
 				return true
 			end
@@ -168,7 +168,7 @@ local storage, duration = 1.4, 0.8
 	-- This function should be called on each onThink and makes sure the npc faces the player it is talking to.
 	--	Should also be called whenever a new player is focused.
 	function NpcHandler:updateFocus()
-		for _, focus in pairs(self.focuses) do
+		for pos, focus in pairs(self.focuses) do
 			if focus ~= nil then
 				doNpcSetCreatureFocus(focus)
 				return
@@ -201,12 +201,11 @@ local storage, duration = 1.4, 0.8
 		end
 
 		local pos = nil
-		for k, v in pairs(self.focuses) do
+		for k,v in pairs(self.focuses) do
 			if v == focus then
 				pos = k
 			end
 		end
-
 		self.focuses[pos] = nil
 
 		self.eventSay[focus] = nil
@@ -252,7 +251,7 @@ local storage, duration = 1.4, 0.8
 	-- Calls the callback function represented by id for all modules added to this npchandler with the given arguments.
 	function NpcHandler:processModuleCallback(id, ...)
 		local ret = true
-		for _, module in pairs(self.modules) do
+		for i, module in pairs(self.modules) do
 			local tmpRet = true
 			if id == CALLBACK_CREATURE_APPEAR and module.callbackOnCreatureAppear ~= nil then
 				tmpRet = module:callbackOnCreatureAppear(...)
@@ -348,10 +347,10 @@ local storage, duration = 1.4, 0.8
 	end
 
 	-- Greets a new player.
-	function NpcHandler:greet(cid, message)
+	function NpcHandler:greet(cid)
 		if cid ~= 0 then
 			local callback = self:getCallback(CALLBACK_GREET)
-			if callback == nil or callback(cid, message) then
+			if callback == nil or callback(cid) then
 				if self:processModuleCallback(CALLBACK_GREET, cid) then
 					local msg = self:getMessage(MESSAGE_GREET)
 					local player = Player(cid)
@@ -371,20 +370,14 @@ local storage, duration = 1.4, 0.8
 
 	-- Handles onCreatureAppear events. If you with to handle this yourself, please use the CALLBACK_CREATURE_APPEAR callback.
 	function NpcHandler:onCreatureAppear(creature)
-		local cid = creature.uid
-		if cid == getNpcCid() then
+		local cid = creature:getId()
+		if cid == getNpcCid() and next(self.shopItems) ~= nil then
 			local npc = Npc()
-			if next(self.shopItems) then
-				local speechBubble = npc:getSpeechBubble()
-				if speechBubble == 3 then
-					npc:setSpeechBubble(4)
-				else
-					npc:setSpeechBubble(2)
-				end
+			local speechBubble = npc:getSpeechBubble()
+			if speechBubble == 3 then
+				npc:setSpeechBubble(4)
 			else
-				if self:getMessage(MESSAGE_GREET) then
-					npc:setSpeechBubble(1)
-				end
+				npc:setSpeechBubble(2)
 			end
 		end
 
@@ -398,7 +391,7 @@ local storage, duration = 1.4, 0.8
 
 	-- Handles onCreatureDisappear events. If you with to handle this yourself, please use the CALLBACK_CREATURE_DISAPPEAR callback.
 	function NpcHandler:onCreatureDisappear(creature)
-		local cid = creature.uid
+		local cid = creature:getId()
 		if getNpcCid() == cid then
 			return
 		end
@@ -415,7 +408,7 @@ local storage, duration = 1.4, 0.8
 
 	-- Handles onCreatureSay events. If you with to handle this yourself, please use the CALLBACK_CREATURE_SAY callback.
 	function NpcHandler:onCreatureSay(creature, msgtype, msg)
-		local cid = creature.uid
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_CREATURE_SAY)
 		if callback == nil or callback(cid, msgtype, msg) then
 			if self:processModuleCallback(CALLBACK_CREATURE_SAY, cid, msgtype, msg) then
@@ -442,7 +435,7 @@ local storage, duration = 1.4, 0.8
 
 	-- Handles onPlayerEndTrade events. If you wish to handle this yourself, use the CALLBACK_PLAYER_ENDTRADE callback.
 	function NpcHandler:onPlayerEndTrade(creature)
-		local cid = creature.uid
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_PLAYER_ENDTRADE)
 		if callback == nil or callback(cid) then
 			if self:processModuleCallback(CALLBACK_PLAYER_ENDTRADE, cid, msgtype, msg) then
@@ -459,7 +452,7 @@ local storage, duration = 1.4, 0.8
 
 	-- Handles onPlayerCloseChannel events. If you wish to handle this yourself, use the CALLBACK_PLAYER_CLOSECHANNEL callback.
 	function NpcHandler:onPlayerCloseChannel(creature)
-		local cid = creature.uid
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_PLAYER_CLOSECHANNEL)
 		if callback == nil or callback(cid) then
 			if self:processModuleCallback(CALLBACK_PLAYER_CLOSECHANNEL, cid, msgtype, msg) then
@@ -472,9 +465,9 @@ local storage, duration = 1.4, 0.8
 
 	-- Handles onBuy events. If you wish to handle this yourself, use the CALLBACK_ONBUY callback.
 	function NpcHandler:onBuy(creature, itemid, subType, amount, ignoreCap, inBackpacks)
-		local cid = creature.uid
+		local cid = creature:getId()
 		if (os.time() - getPlayerStorageValue(cid, storage)) >= duration then
-		setPlayerStorageValue(cid, storage, os.time()) -- DELAY PRA COMPRAR 
+		setPlayerStorageValue(cid, storage, os.time()) -- DELAY FOR TO BUY ITEMS
 		local callback = self:getCallback(CALLBACK_ONBUY)
 		if callback == nil or callback(cid, itemid, subType, amount, ignoreCap, inBackpacks) then
 			if self:processModuleCallback(CALLBACK_ONBUY, cid, itemid, subType, amount, ignoreCap, inBackpacks) then
@@ -488,7 +481,7 @@ local storage, duration = 1.4, 0.8
 
 	-- Handles onSell events. If you wish to handle this yourself, use the CALLBACK_ONSELL callback.
 	function NpcHandler:onSell(creature, itemid, subType, amount, ignoreCap, inBackpacks)
-		local cid = creature.uid
+		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_ONSELL)
 		if callback == nil or callback(cid, itemid, subType, amount, ignoreCap, inBackpacks) then
 			if self:processModuleCallback(CALLBACK_ONSELL, cid, itemid, subType, amount, ignoreCap, inBackpacks) then
@@ -522,7 +515,7 @@ local storage, duration = 1.4, 0.8
 			end
 
 			if self:processModuleCallback(CALLBACK_ONTHINK) then
-				for _, focus in pairs(self.focuses) do
+				for pos, focus in pairs(self.focuses) do
 					if focus ~= nil then
 						if not self:isInRange(focus) then
 							self:onWalkAway(focus)
@@ -538,10 +531,10 @@ local storage, duration = 1.4, 0.8
 	end
 
 	-- Tries to greet the player with the given cid.
-	function NpcHandler:onGreet(cid, message)
+	function NpcHandler:onGreet(cid)
 		if self:isInRange(cid) then
 			if not self:isFocused(cid) then
-				self:greet(cid, message)
+				self:greet(cid)
 				return
 			end
 		end
@@ -559,6 +552,7 @@ local storage, duration = 1.4, 0.8
 			if callback == nil or callback() then
 				if self:processModuleCallback(CALLBACK_CREATURE_DISAPPEAR, cid) then
 					local msg = self:getMessage(MESSAGE_WALKAWAY)
+
 					local player = Player(cid)
 					local playerName = player and player:getName() or -1
 					local playerSex = player and player:getSex() or 0
@@ -650,12 +644,10 @@ local storage, duration = 1.4, 0.8
 			if npc == nil then
 				return
 			end
-
 			local player = Player(focusId)
 			if player then
-				local parseInfo = {[TAG_PLAYERNAME] = player:getName(), [TAG_TIME] = getTibianTime(), [TAG_BLESSCOST] = getBlessingsCost(player:getLevel()), [TAG_PVPBLESSCOST] = getPvpBlessingCost(player:getLevel())}
-				npc:say(self:parseMessage(message, parseInfo), TALKTYPE_PRIVATE_NP, false, player, npc:getPosition())
+				npc:say(message, TALKTYPE_PRIVATE_NP, false, player, npc:getPosition())
 			end
-		end, self.talkDelayTime * 1000, Npc().uid, message, focus)
+		end, self.talkDelayTime * 1000, Npc():getId(), message, focus)
 	end
 end
