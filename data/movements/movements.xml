@@ -318,8 +318,9 @@
 	<movevent event="RemoveItem" actionid="60999" script="others/parchment.lua" />
 
 	<!-- Citizen teleport -->
-	<movevent event="StepIn" itemid="1387" script="citizen.lua" />
-	<movevent event="StepIn" itemid="1397" script="citizen.lua" />
+	<movevent event="StepIn" fromuid="9056" touid="9068" script="citizen.lua" />
+	<movevent event="StepIn" uniqueid="9240" script="citizen.lua" />
+	<movevent event="StepIn" fromuid="9500" touid="9501" script="citizen.lua" />
 
 	<!-- Walkback when walking on quest chest -->
 	<movevent event="StepIn" itemid="1738" script="walkback.lua" />
