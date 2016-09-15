@@ -785,8 +785,6 @@
 		<vocation name="Elite Knight" showInDescription="0" />
 	</movevent>
 	<movevent event="DeEquip" itemid="26189" level="100" slot="ring" function="onDeEquipItem" />
-	<movevent event="Equip" itemid="22516" level="200" slot="ring" function="onEquipItem" />
-	<movevent event="DeEquip" itemid="22516" level="200" slot="ring" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="26186" level="100" slot="ring" function="onEquipItem" >
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />

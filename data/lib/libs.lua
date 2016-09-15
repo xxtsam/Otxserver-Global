@@ -7,8 +7,5 @@ dofile('data/lib/core/core.lua')
 -- Compatibility library for our old Lua API
 dofile('data/lib/compat/compat.lua')
 
--- Custom Systems
-dofile('data/lib/custom/customFunctions.lua')
-dofile('data/lib/custom/storages.lua')
+-- Reward System
 dofile('data/lib/rewardsystem/rewardboss.lua')
-dofile('data/lib/core/battlefield.lua')

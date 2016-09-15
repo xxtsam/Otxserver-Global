@@ -41,6 +41,6 @@
 		<item id="24842" countmax="3" chance="2000"/><!-- raw meat -->
 		<item id="11224" chance="2000"/><!-- thick fur -->
 		<item id="3973" chance="5230"/><!-- tusk shield -->
-		<item id="7432" chance="5230"/><!-- furry club -->
+		<item id="7432" chance="5230"/><!-- furry club-->
 	</loot>
 </monster>
