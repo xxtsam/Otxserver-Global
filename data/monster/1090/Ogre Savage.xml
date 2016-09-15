@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Ogre Savage" nameDescription="Ogre Savage" race="blood" experience="55" speed="200" manacost="0">
-	<health now="140" max="140"/>
-	<look type="858" corpse="5527"/>
+<monster name="Ogre Savage" nameDescription="Ogre Savage" race="blood" experience="950" speed="200" manacost="0">
+	<health now="1400" max="1400"/>
+	<look type="858" corpse="24803"/>
 	<targetchange interval="4000" chance="0"/>
 	<flags>
 		<flag summonable="0"/>
@@ -27,16 +27,30 @@
 		<element deathPercent="-5"/>
 	</elements>
 	<immunities>
-		<immunity outfit="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+		<immunity earth="1" />
 	</immunities>
 	<voices interval="2000" chance="10">
-		<voice sentence="Grrrrrrr"/>
-		<voice sentence="Yoooohhuuuu!" yell="1"/>
+		<voice sentence="Must! Chop! Food! Raahh!"/>
+		<voice sentence="You tasty!"/>
+		<voice sentence="UGGA UGGA!!" yell="1"/>
 	</voices>
 	<loot>
-		<item id="2671" countmax="2" chance="35000"/><!-- ham -->
-		<item id="5897" chance="710"/><!-- wolf paw -->
-		<item id="3976" chance="40"/><!-- wolf trophy -->
-		<item id="11235" chance="5230"/><!-- warwolf fur -->
+		<item id="2148" countmax="134" chance="100000"/><!-- gold coin -->
+		<item id="2147" countmax="2" chance="35000"/><!-- small rubies -->
+		<item id="8844" countmax="2" chance="35000"/><!-- jalapeno pepper -->
+		<item id="9970" countmax="2" chance="35000"/><!-- small topaz -->
+		<item id="7439" chance="35000"/><!-- berserk potion -->
+		<item id="2194" chance="35000"/><!-- mysterious fetish -->
+		<item id="2687" countmax="4" chance="35000"/><!-- cookie -->
+		<item id="24844" chance="35000"/><!-- ogre ear stud -->
+		<item id="24845" chance="35000"/><!-- ogre nose ring -->
+		<item id="24849" countmax="2" chance="35000"/><!-- onyx chip -->
+		<item id="24850" countmax="1" chance="35000"/><!-- opal -->
+		<item id="24847" chance="35000"/><!-- skull fetish -->
+		<item id="7588" chance="35000"/><!-- strong health potion -->
+		<item id="2391" chance="35000"/><!-- war hammer -->
+		<item id="24848" chance="35000"/><!-- shamanic mask -->
 	</loot>
 </monster>

@@ -27,16 +27,20 @@
 		<element deathPercent="-5"/>
 	</elements>
 	<immunities>
-		<immunity outfit="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+		<immunity earth="1" />
 	</immunities>
 	<voices interval="2000" chance="10">
-		<voice sentence="Grrrrrrr"/>
-		<voice sentence="Yoooohhuuuu!" yell="1"/>
+		<voice sentence="Snort!"/>
+		<voice sentence="Snarl!"/>
+		<voice sentence="Grunt!" yell="1"/>
 	</voices>
 	<loot>
-		<item id="2671" countmax="2" chance="35000"/><!-- ham -->
-		<item id="5897" chance="710"/><!-- wolf paw -->
-		<item id="3976" chance="40"/><!-- wolf trophy -->
-		<item id="11235" chance="5230"/><!-- warwolf fur -->
+		<item id="5925" countmax="1" chance="35000"/><!-- hardene bone -->
+		<item id="24842" countmax="3" chance="2000"/><!-- raw meat -->
+		<item id="11224" chance="2000"/><!-- thick fur -->
+		<item id="3973" chance="5230"/><!-- tusk shield -->
+		<item id="7432" chance="5230"/><!-- furry club -->
 	</loot>
 </monster>

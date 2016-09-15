@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Ogre Shaman" nameDescription="Ogre Shaman" race="blood" experience="55" speed="200" manacost="0">
-	<health now="140" max="140"/>
+<monster name="Ogre Shaman" nameDescription="Ogre Shaman" race="blood" experience="625" speed="200" manacost="0">
+	<health now="800" max="800"/>
 	<look type="859" corpse="24795"/>
 	<targetchange interval="4000" chance="0"/>
 	<flags>
@@ -27,16 +27,40 @@
 		<element deathPercent="-5"/>
 	</elements>
 	<immunities>
-		<immunity outfit="1"/>
+		<immunity paralyze="1"/>
+		<immunity invisible="1"/>
+		<immunity earth="1"/>
+		<imunity death="1"/>
 	</immunities>
 	<voices interval="2000" chance="10">
-		<voice sentence="Grrrrrrr"/>
-		<voice sentence="Yoooohhuuuu!" yell="1"/>
+		<voice sentence="The spirits hunger!"/>
+		<voice sentence="A sacrifice for Great Hunger!"/>
+		<voice sentence="Stay here, soul food!"/>
+		<voice sentence="You more delicate than clomp" yell="1"/>
 	</voices>
 	<loot>
-		<item id="2671" countmax="2" chance="35000"/><!-- ham -->
-		<item id="5897" chance="710"/><!-- wolf paw -->
-		<item id="3976" chance="40"/><!-- wolf trophy -->
-		<item id="11235" chance="5230"/><!-- warwolf fur -->
+		<item id="2148" countmax="90" chance="100000"/><!-- gold coin -->
+		<item id="2147" countmax="2" chance="35000"/><!-- small rubies -->
+		<item id="2666" countmax="2" chance="35000"/><!-- meat -->
+		<item id="1294" countmax="5" chance="35000"/><!-- small stone -->
+		<item id="10549" chance="35000"/><!-- ancient stone -->
+		<item id="12403" chance="35000"/><!-- battle stone -->
+		<item id="2687" chance="35000"/><!-- cookie -->
+		<item id="2209" chance="35000"/><!-- club ring -->
+		<item id="24844" chance="35000"/><!-- ogre ear stud -->
+		<item id="24845" chance="35000"/><!-- ogre nose ring -->
+		<item id="24849" countmax="2" chance="35000"/><!-- onyx chip -->
+		<item id="24850" chance="35000"/><!-- opal -->
+		<item id="2166" chance="35000"/><!-- power ring -->
+		<item id="24847" chance="35000"/><!-- skull fetish -->
+		<item id="7588" chance="35000"/><!-- strong health potion -->
+		<item id="2143" chance="35000"/><!-- white pearl -->
+		<item id="7428" chance="35000"/><!-- bonebreaker -->
+		<item id="7419" chance="35000"/><!-- dreaded cleaver -->
+		<item id="24828" chance="35000"/><!-- ogre choppa -->
+		<item id="24827" chance="35000"/><!-- ogre klubba -->
+		<item id="2562" chance="35000"/><!-- pot -->
+		<item id="9820" chance="35000"/><!-- rusty helmet -->
+		<item id="24848" chance="35000"/><!-- shamanic mask -->
 	</loot>
 </monster>

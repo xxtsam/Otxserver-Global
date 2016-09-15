@@ -805,15 +805,15 @@
 	<monster name="hirintror" file="bosses/hirintror.xml"/>
 	<monster name="Tyrn" file="bosses/tyrn.xml"/>
 	<monster name="White Pale" file="bosses/white pale.xml"/>
-	<monster name="Apocalypse" file="bosses/apocalypse.xml"/>
+	<monster name="Apocalypse" file="bosses/Apocalypse.xml"/>
 	<monster name="Apprentice Sheng" file="bosses/apprentice sheng.xml"/>
-	<monster name="Arachir The Ancient One" file="bosses/arachir the ancient one.xml"/>
+	<monster name="Arachir The Ancient One" file="bosses/Arachir the ancient one.xml"/>
 	<monster name="Armenius" file="bosses/armenius.xml"/>
 	<monster name="Azerus" file="bosses/azerus.xml"/>
 	<monster name="Azerus2" file="bosses/azerus2.xml"/>
 	<monster name="Barbaria" file="bosses/barbaria.xml"/>
 	<monster name="Baron Brute" file="bosses/baron brute.xml"/>
-	<monster name="Bazir" file="bosses/bazir.xml"/>
+	<monster name="Bazir" file="bosses/Bazir.xml"/>
 	<monster name="Bibby Bloodbath" file="bosses/bibby bloodbath.xml"/>
 	<monster name="Big Boss Trolliver" file="bosses/big boss trolliver.xml"/>
 	<monster name="Boogey" file="bosses/boogey.xml"/>
