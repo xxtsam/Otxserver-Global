@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Devourer" nameDescription="a devourer" race="blood" experience="1800" speed="200" manacost="0">
 	<health now="1900" max="1900"/>
-	<look type="617" corpse="23477"/>
+	<look type="617" corpse="23484"/>
 	<targetchange interval="4000" chance="10"/>
 	<flags>
         <flag summonable="0"/>
@@ -52,4 +52,23 @@
 		<voice sentence="*Bruaarrr!*"/>
 		<voice sentence="*omnnommm nomm*"/>
 	</voices>
+	<loot>
+		<item id="2148" countmax="154" chance="28000"/><!-- gold coin -->
+		<item id="2152" countmax="2" chance="3500"/><!-- platinum coin -->
+		<item id="2145" countmax="2" chance="1000"/><!-- small diamond -->
+		<item id="2149" countmax="2" chance="1000"/><!-- small emerald -->
+		<item id="2147" countmax="2" chance="1000"/><!-- small rubies -->
+		<item id="4409" chance="1000"/><!-- glooth axe -->
+		<item id="23550" chance="3000"/><!-- glooth blade -->
+		<item id="23549" chance="3000"/><!-- glooth club -->
+		<item id="23553" chance="3000"/><!-- glob of glooth -->
+		<item id="23529" chance="3000"/><!-- glooth spear -->
+		<item id="2146" chance="3000"/><!-- small sapphire -->
+		<item id="9970" chance="3000"/><!-- small topaz -->
+		<item id="2151" chance="3000"/><!-- talon -->
+		<item id="2154" chance="3000"/><!-- yellow gem -->
+		<item id="8912" chance="3000"/><!-- springsprout rod -->
+		<item id="23535" chance="800"/><!-- glooth cape -->
+		<item id="2155" chance="200"/><!-- green gem -->
+	</loot>
 </monster>
