@@ -6,8 +6,8 @@
 	-->
 
     <!--Announcements-->
-	<script delay="1000" script="Tyrn.lua" />
-    <announce delay="1000" type="event" message="Beware of Tyrn!" />
+	<script delay="1000" script="Ocyakao.lua" />
+    <announce delay="2000" type="event" message="Beware of Ocyakao!" />
   <!--Single Spawns-->
- <!-- <singlespawn delay="1000" name="Tyrn" x="33094" y="32404" z="13" /> -->
+  <!--<singlespawn delay="1000" name="Ocyakao" x="32353" y="31052" z="7" />-->
 </raid>

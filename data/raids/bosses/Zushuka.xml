@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <raid>
-	<singlespawn delay="1000" name="Zushuka" x="31943" y="31385" z="9" />
+	<!--Single Spawns-->
+	<script delay="1000" script="Zushuka.lua" />
+	<!--<singlespawn delay="1000" name="Zushuka" x="31941" y="31388" z="9" />-->
 </raid>
