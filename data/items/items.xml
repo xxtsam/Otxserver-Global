@@ -34303,27 +34303,27 @@
 	<item fromid="23308" toid="23311" name="rubble" />
 	<item fromid="23312" toid="23319" article="a" name="lattice" />
 	<item fromid="23320" toid="23323" article="a" name="broken wall" />
-	<item id="23343" article="a" name="dead walker">
+	<item id="23343" article="a" name="dead glooth golem">
 		<attribute key="containerSize" value="15" />
 		<attribute key="decayTo" value="23344" />
 		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="23344" article="a" name="dead walker">
+	<item id="23344" article="a" name="dead glooth golem">
 		<attribute key="containerSize" value="15" />
 		<attribute key="decayTo" value="23345" />
 		<attribute key="duration" value="900" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="23345" article="a" name="dead walker">
+	<item id="23345" article="a" name="dead glooth golem">
 		<attribute key="containerSize" value="15" />
 		<attribute key="decayTo" value="23346" />
 		<attribute key="duration" value="600" />
 		<attribute key="corpseType" value="blood" />
 	</item>
-	<item id="23346" article="a" name="dead walker">
+	<item id="23346" article="a" name="dead glooth golem">
 		<attribute key="containerSize" value="15" />
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="600" />
@@ -34457,27 +34457,27 @@
 		<attribute key="fluidSource" value="blood" />
 	</item>
 	
-	<item id="23363" article="a" name="dead glooth golem">
+	<item id="23363" article="a" name="dead walker">
 		<attribute key="containerSize" value="15" />
 		<attribute key="decayTo" value="23364" />
 		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="23364" article="a" name="dead glooth golem">
+	<item id="23364" article="a" name="dead walker">
 		<attribute key="containerSize" value="15" />
 		<attribute key="decayTo" value="23365" />
 		<attribute key="duration" value="900" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="23365" article="a" name="dead glooth golem">
+	<item id="23365" article="a" name="dead walker">
 		<attribute key="containerSize" value="15" />
 		<attribute key="decayTo" value="23366" />
 		<attribute key="duration" value="600" />
 		<attribute key="corpseType" value="blood" />
 	</item>
-	<item id="23366" article="a" name="dead glooth golem">
+	<item id="23366" article="a" name="dead walker">
 		<attribute key="containerSize" value="15" />
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="600" />
