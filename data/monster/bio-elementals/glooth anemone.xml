@@ -27,15 +27,29 @@
 		<element deathPercent="-10"/>
 	</elements>
 	<voices interval="5000" chance="10">
-		<voice sentence="Il lorstok human!"/>
-		<voice sentence="Toks utat."/>
-		<voice sentence="Human, uh whil dyh!"/>
-		<voice sentence="Youh ah trak!"/>
-		<voice sentence="Let da mashing begin!"/>
+		<voice sentence="*shlurp*"/>
+		<voice sentence="*shglip*"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="47" chance="82000"/><!-- gold coin -->
-		<item id="7618" chance="210"/><!-- health potion -->
-		<item id="2666" chance="30070"/><!-- meat -->
+		<item id="23515" countmax="5" chance="210"/><!-- bowl of glooth soup -->
+		<item id="23514" countmax="5" chance="210"/><!-- glooth sandwich -->
+		<item id="7591" countmax="5" chance="210"/><!-- great health potion -->
+		<item id="7590" countmax="5" chance="210"/><!-- great mana potion -->
+		<item id="8472" countmax="5" chance="210"/><!-- great spirit potion -->
+		<item id="23517" countmax="5" chance="210"/><!-- glooth steak -->
+		<item id="23568" countmax="3" chance="210"/><!-- slimy leaf tentacles -->
+		<item id="2150" countmax="5" chance="210"/><!-- small amethyst -->
+		<item id="2145" countmax="5" chance="210"/><!-- small diamond -->
+		<item id="2147" countmax="5" chance="210"/><!-- small ruby -->
+		<item id="9970" countmax="5" chance="210"/><!-- small topaz -->
+		<item id="23549" chance="210"/><!-- glooth club -->
+		<item id="23529" chance="210"/><!-- glooth spear -->
+		<item id="23543" chance="210"/><!-- glooth whip -->
+		<item id="23554" chance="210"/><!-- glooth amulet-->
+		<item id="23551" chance="210"/><!-- glooth axe -->
+		<item id="23550" chance="210"/><!-- glooth blade -->
+		<item id="23535" chance="210"/><!-- glooth cape -->
+		<item id="2156" chance="210"/><!-- red gem -->
+		<item id="2154" chance="210"/><!-- yellow gem -->	
 	</loot>
 </monster>

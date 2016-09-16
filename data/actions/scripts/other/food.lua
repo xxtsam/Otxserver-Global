@@ -95,7 +95,12 @@ local foods = {
 	[18397] = {33, "Munch."}, -- mushroom pie
 	[19737] = {10, "Urgh."}, -- insectoid eggs
 	[20100] = {15, "Smack."}, -- soft cheese
-	[20101] = {12, "Smack."} -- rat cheese
+	[20101] = {12, "Smack."}, -- rat cheese
+	[26191] = {5, "Mmmm."}, -- energy bar
+	[23517] = {30, "Chomp."}, -- glooth steak
+	[26201] = {5, "Mmmm."}, -- energy drink
+	[24841] = {11, "Yum."}, -- prickly pear
+    [24843] = {60, "Chomp."} -- roasted meat
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
