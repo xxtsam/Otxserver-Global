@@ -824,7 +824,7 @@
 	<monster name="Captain Jones" file="bosses/captain jones.xml"/>
 	<monster name="Chikhaton" file="bosses/chikhaton.xml"/>
 	<monster name="Chizzoron The Distorter" file="bosses/chizzoron the distorter.xml"/>
-	<monster name="Clubarc The Plunderer" file="bosses/clubarc the plunderer.xml"/>
+	<monster name="Cublarc The Plunderer" file="bosses/cublarc the plunderer.xml"/>
 	<monster name="Coldheart" file="bosses/coldheart.xml"/>
 	<monster name="Countess Sorrow" file="bosses/countess sorrow.xml"/>
 	<monster name="Chayenne" file="bosses/chayenne.xml"/>
