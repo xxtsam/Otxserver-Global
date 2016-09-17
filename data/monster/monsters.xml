@@ -509,7 +509,7 @@
 	<monster name="Insectoid Scout" file="insects/insectoid scout.xml"/>
 	<monster name="Insectoid Worker" file="insects/insectoid worker.xml"/>
 	<monster name="Kollos" file="insects/kollos.xml"/>
-	<monster name="Ladybug" file="insects/lady bug.xml"/>
+	<monster name="Lady Bug" file="insects/lady bug.xml"/>
 	<monster name="Lancer Beetle" file="insects/lancer beetle.xml"/>
 	<monster name="Larva" file="insects/larva.xml"/>
 	<monster name="Lesser Swarmer" file="insects/lesser swarmer.xml"/>
@@ -825,7 +825,7 @@
 	<monster name="Chikhaton" file="bosses/chikhaton.xml"/>
 	<monster name="Chizzoron The Distorter" file="bosses/chizzoron the distorter.xml"/>
 	<monster name="Cublarc The Plunderer" file="bosses/cublarc the plunderer.xml"/>
-	<monster name="Coldheart" file="bosses/coldheart.xml"/>
+	<monster name="Coldheart" file="bosses/Coldheart.xml"/>
 	<monster name="Countess Sorrow" file="bosses/countess sorrow.xml"/>
 	<monster name="Chayenne" file="bosses/chayenne.xml"/>
 	<monster name="Deadeye Devious" file="bosses/deadeye devious.xml"/>
@@ -834,10 +834,10 @@
 	<monster name="Demodras" file="bosses/demodras.xml"/>
 	<monster name="Devovorga" file="bosses/devovorga.xml"/>
 	<monster name="Dharalion" file="bosses/dharalion.xml"/>
-	<monster name="Diblis The Fair" file="bosses/diblis the fair.xml"/>
+	<monster name="Diblis The Fair" file="bosses/Diblis The Fair.xml"/>
 	<monster name="Dirtbeard" file="bosses/dirtbeard.xml"/>
 	<monster name="Doctor Perhaps" file="bosses/doctor perhaps.xml"/>
-	<monster name="Doomhowl" file="bosses/doomhowl.xml"/>
+	<monster name="Doomhowl" file="bosses/Doomhowl.xml"/>
 	<monster name="Dracola" file="bosses/dracola.xml"/>
 	<monster name="Dreadwing" file="bosses/dreadwing.xml"/>
 	<monster name="Energized Raging Mage" file="bosses/energized raging mage.xml"/>
@@ -854,7 +854,7 @@
 	<monster name="Fleshcrawler" file="bosses/fleshcrawler.xml"/>
 	<monster name="Fluffy" file="bosses/fluffy.xml"/>
 	<monster name="Foreman Kneebiter" file="bosses/foreman kneebiter.xml"/>
-	<monster name="Freegoiz" file="bosses/freegoiz.xml"/>
+	<monster name="Freegoiz" file="bosses/Freegoiz.xml"/>
 	<monster name="Fury Of The Emperor" file="bosses/fury of the emperor.xml"/>
 	<monster name="Furyosa" file="bosses/furyosa.xml"/>
 	<monster name="Gaz'haragoth" file="bosses/gaz'haragoth.xml"/>
@@ -878,7 +878,7 @@
 	<monster name="Horestis" file="bosses/horestis.xml"/>
 	<monster name="Lion Rock" file="bosses/Lion Rock.xml"/>
 	<monster name="Incineron" file="bosses/incineron.xml"/>
-	<monster name="Infernatil" file="bosses/infernatil.xml"/>
+	<monster name="Infernatil" file="bosses/Infernatil.xml"/>
 	<monster name="Inky" file="bosses/inky.xml"/>
 	<monster name="Jaul" file="bosses/jaul.xml"/>
 	<monster name="Jesse The Wicked" file="bosses/jesse the wicked.xml"/>
@@ -906,7 +906,7 @@
 	<monster name="Munster" file="bosses/munster.xml"/>
 	<monster name="Mutated Zalamon" file="bosses/mutated zalamon.xml"/>
 	<monster name="Necropharus" file="bosses/necropharus.xml"/>
-	<monster name="Obujos" file="bosses/obujos.xml"/>
+	<monster name="Obujos" file="bosses/Obujos.xml"/>
 	<monster name="Paiz The Pauperizer" file="bosses/paiz the pauperizer.xml"/>
 	<monster name="Pythius The Rotten" file="bosses/pythius the rotten.xml"/>
 	<monster name="Raging Mage" file="bosses/raging mage.xml"/>
@@ -915,13 +915,13 @@
 	<monster name="Robby The Reckless" file="bosses/robby the reckless.xml"/>
 	<monster name="Rocko" file="bosses/rocko.xml"/>
 	<monster name="Ron The Ripper" file="bosses/ron the ripper.xml"/>
-	<monster name="Rottie The Rotworm" file="bosses/rottie the rotworm.xml"/>
+	<monster name="Rottie The Rotworm" file="bosses/Rottie the Rotworm.xml"/>
 	<monster name="Rotworm Queen" file="bosses/rotworm queen.xml"/>
 	<monster name="Rukor Zad" file="bosses/rukor zad.xml"/>
 	<monster name="Scorn Of The Emperor" file="bosses/scorn of the emperor.xml"/>
 	<monster name="Shardhead" file="bosses/shardhead.xml"/>
 	<monster name="Sharptooth" file="bosses/sharptooth.xml"/>
-	<monster name="Sir Valorcrest" file="bosses/sir valorcrest.xml"/>
+	<monster name="Sir Valorcrest" file="bosses/Sir Valorcrest.xml"/>
 	<monster name="Shlorg" file="bosses/shlorg.xml"/>
 	<monster name="Weakened Shlorg" file="bosses/weakened shlorg.xml"/>
 	<monster name="Smuggler Baron Silvertoe" file="bosses/smuggler baron silvertoe.xml"/>
@@ -932,7 +932,7 @@
 	<monster name="Splasher" file="bosses/splasher.xml"/>
 	<monster name="Stonecracker" file="bosses/stonecracker.xml"/>
 	<monster name="Sulphur Scuttler" file="bosses/sulphur scuttler.xml"/>
-	<monster name="Tanjis" file="bosses/tanjis.xml"/>
+	<monster name="Tanjis" file="bosses/Tanjis.xml"/>
 	<monster name="Teleskor" file="bosses/teleskor.xml"/>
 	<monster name="The Abomination" file="bosses/the abomination.xml"/>
 	<monster name="The Axeorcist" file="bosses/the axeorcist.xml"/>
@@ -964,16 +964,16 @@
 	<monster name="Tremorak" file="bosses/tremorak.xml"/>
 	<monster name="Tromphonyte" file="bosses/tromphonyte.xml"/>
 	<monster name="Ungreez" file="bosses/ungreez.xml"/>
-	<monster name="Verminor" file="bosses/verminor.xml"/>
+	<monster name="Verminor" file="bosses/Verminor.xml"/>
 	<monster name="Versperoth" file="bosses/versperoth.xml"/>
 	<monster name="Warlord Ruzad" file="bosses/warlord ruzad.xml"/>
 	<monster name="Wrath Of The Emperor" file="bosses/wrath of the emperor.xml"/>
 	<monster name="Xenia" file="bosses/xenia.xml"/>
-	<monster name="Yaga The Crone" file="bosses/yaga the crone.xml"/>
+	<monster name="Yaga The Crone" file="bosses/Yaga The Crone.xml"/>
 	<monster name="Yakchal" file="bosses/yakchal.xml"/>
 	<monster name="Zanakeph" file="bosses/zanakeph.xml"/>
 	<monster name="Zarabustor" file="bosses/zarabustor.xml"/>
-	<monster name="Zevelon Duskbringer" file="bosses/zevelon duskbringer.xml"/>
+	<monster name="Zevelon Duskbringer" file="bosses/Zevelon Duskbringer.xml"/>
 	<monster name="Zomba" file="bosses/zomba.xml"/>
 	<monster name="Zulazza The Corruptor" file="bosses/zulazza the corruptor.xml"/>
 	<monster name="Zushuka" file="bosses/zushuka.xml"/>
@@ -1023,6 +1023,7 @@
 	<monster name="Plaguethrower" file="traps/plaguethrower.xml"/>
 	<monster name="Pillar" file="traps/pillar.xml"/>
 	<monster name="Shredderthrower" file="traps/shredderthrower.xml"/>
+	<monster name="cluster of red crystals" file="traps/cluster of red crystals.xml"/>
 
 	<!-- Wild Magics -->
 	<monster name="Wild Fire Magic" file="wild magics/wild fire magic.xml"/>
@@ -1098,5 +1099,5 @@
 <!-- Custom --> 
 	<!-- Trainers -->
 	<monster name="Trailemaw" file="customs/trailemaw.xml" />
-	<monster name="Training Monk" file="customs/training monk.xml"/>
+	<monster name="Training Monk" file="customs/Training Monk.xml"/>
 </monsters>
