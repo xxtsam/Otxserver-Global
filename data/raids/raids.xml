@@ -17,13 +17,13 @@
 	<raid name="Titanica" file="Special/Titanica.xml" interval2="240" margin="20"/>		
 		
 	<!-- Bosses -->
-	<raid name="The Pale Count" file="bosses/The Pale Count.xml" interval2="490" margin="60" /> 
+	<raid name="The Pale Count" file="bosses/the pale count.xml" interval2="490" margin="60" /> 
 	<raid name="Fernfang" file="bosses/fernfang.xml" interval2="1440" margin="80" /> 
 	<raid name="Weakened Shlorg" file="bosses/weakened shlorg.xml" interval2="430" margin="50" /> <!-- FEITO -->
 	<raid name="Dharalion" file="bosses/Dharalion.xml" interval2="500" margin="70" /> 
 	<raid name="The Welter" file="bosses/the welter.xml" interval2="440" margin="60"/> <!-- FEITO -->
 	<raid name="Furyosa" file="bosses/furyosa.xml" interval2="440" margin="60"/>	<!-- FEITO -->
-	<raid name="Zushuka" file="bosses/zushuka.xml" interval2="6000" margin="60"/> <!-- FEITO -->
+	<raid name="Zushuka" file="bosses/Zushuka.xml" interval2="6000" margin="60"/> <!-- FEITO -->
 	<raid name="White Pale" file="bosses/white pale.xml" interval2="440" margin="60"/>	 <!-- FEITO -->
 	<raid name="White Paleee" file="bosses/white paleee.xml" interval2="440" margin="119"/>	 <!-- FEITO -->
 	<raid name="White Palee" file="bosses/white palee.xml" interval2="440" margin="100"/>	 <!-- FEITO -->
