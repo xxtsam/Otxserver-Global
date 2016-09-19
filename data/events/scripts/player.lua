@@ -211,7 +211,7 @@ end
 
 function Player:onGainExperience(source, exp, rawExp)
 	if not source or source:isPlayer() then
-		return exp
+		return math.floor(exp)
 	end
 
 	-- Soul regeneration
@@ -236,7 +236,7 @@ function Player:onGainExperience(source, exp, rawExp)
 		end
 	end
 
-	return exp
+	return math.floor(exp)
 end
 
 function Player:onLoseExperience(exp)
