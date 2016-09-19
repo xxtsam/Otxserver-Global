@@ -2,4 +2,14 @@
 <npc name="Azalea" script="Azalea.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="433" head="0" body="24" legs="27" feet="40" addons="3" />
+		<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			Exotic Flowers,2107,300;
+			Flower Bowl,2102,6;
+			God Flowers,2100,5;
+			Honey Flower,2103,5;
+			Indoor Plant Kit,3937,8;
+			Potted Flower,2104,5;" />
+	</parameters>
 </npc>

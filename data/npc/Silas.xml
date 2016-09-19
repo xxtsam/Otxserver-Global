@@ -1,35 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Silas" script="Silas.lua" walkinterval="0" floorchange="0">
+<npc name="Silas" script="Silas.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="129" head="97" body="118" legs="117" feet="97" addons="1" />
-	
-	<parameters>
+		<parameters>
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="
-			arrow,2544,3;
-			bolt,2543,4;			
-			bow,2456,400;
-			crystalline arrow.,18304,20;			
-			drill bolt,18436,12;			
-			earth arrow,7850,5;
-			envenomed arrow,18437,12;
-			flaming arrow,7840,5;
-			flash arrow,7838,5;			
-			onyx arrow,7365,7;
-			piercing bolt,7363,5;			
-			power bolt,2547,7;
-			prismatic bolt,18435,20;			
-			shiver arrow,7839,5;			
-			sniper arrow,7364,5;			
-			spear,2389,9;			
-			tarsal arrow,15648,6;			
-			throwing star,2399,42;			
-			vortex bolt,15649,6
-			" />
+			Arrow,2544,3;
+			Bolt,2543,4;
+			Bow,2456,400;
+			Crossbow,2455,500;
+			Crystalline Arrow,18304,20;
+			Drill Bolt,18436,12;
+			Earth Arrow,7850,5;
+			Envenomed Arrow,18437,12;
+			Flaming Arrow,7840,5;
+			Flash Arrow,7838,5;
+			Onyx Arrow,7365,7;
+			Piercing Bolt,7363,5;
+			Power Bolt,2547,7;
+			Prismatic Bolt,18435,20;
+			Royal Spear,7378,15;
+			Shiver Arrow,7839,5;
+			Sniper Arrow,7364,5;
+			Spear,2389,9;
+			Tarsal Arrow,15648,6;
+			Throwing Star,2399,42;
+			Vortex Bolt,15649,6;" />
 		<parameter key="shop_sellable" value="
-			
-			bow,2456,100;
-			crossbow,2455,120;
-			spear,2389,3;" />
+			Spear,2389,3;
+			Bow,2456,100;
+			Crossbow,2455,120;" />
 	</parameters>
 </npc>

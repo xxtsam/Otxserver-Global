@@ -7,4 +7,5 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
+npcHandler:setMessage(MESSAGE_GREET, "Good day, |PLAYERNAME|. Ask me for a {trade}.")
 npcHandler:addModule(FocusModule:new())
