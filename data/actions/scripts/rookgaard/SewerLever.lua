@@ -8,8 +8,6 @@ local config = {
 		Position(32098, 32204, 8),
 		Position(32104, 32204, 8)
 	},
-	relocatePosition = Position(32102, 32205, 8),
-	relocateMonsterPosition = Position(32103, 32205, 8),
 	bridgeId = 5770
 }
 
