@@ -4747,7 +4747,8 @@ bool Game::loadExperienceStages()
 		if (strcasecmp(stageNode.name(), "config") == 0) {
 			stagesEnabled = stageNode.attribute("enabled").as_bool();
 		} else {
-			uint32_t minLevel, maxLevel, multiplier;
+			uint32_t minLevel, maxLevel;
+			float multiplier;
 
 			pugi::xml_attribute minLevelAttribute = stageNode.attribute("minlevel");
 			if (minLevelAttribute) {
@@ -4767,7 +4768,7 @@ bool Game::loadExperienceStages()
 
 			pugi::xml_attribute multiplierAttribute = stageNode.attribute("multiplier");
 			if (multiplierAttribute) {
-				multiplier = pugi::cast<uint32_t>(multiplierAttribute.value());
+				multiplier = pugi::cast<float>(multiplierAttribute.value());
 			} else {
 				multiplier = 1;
 			}
