@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
-	<!-- Novos -->
-	<action actionid="9717" script="other/yackal.lua" /> 
+	<!-- Quests
+	<action itemid="1740" script="quests/quests.lua" />
+	<action fromid="1747" toid="1749" script="quests/quests.lua" />
+	-->
+
+	<!-- Yackal -->
+	<action actionid="9717" script="other/yackal.lua" />
 
 	<!-- Gray Island -->
 	<action uniqueid="25610" script="gray island/jaul.lua" />
@@ -9,8 +14,8 @@
 	<action uniqueid="25612" script="gray island/obujos.lua" />
 
 	<!-- ArenaPVP -->
-	<action itemid="24732" script="arena/arena5vs5.lua"/>
-	<action itemid="24733" script="arena/arena1vs1.lua"/>
+	<action itemid="24732" script="arena/arena5vs5.lua" />
+	<action itemid="24733" script="arena/arena1vs1.lua" />
 
 	<!-- Rookgaard -->
 	<action uniqueid="50081" script="rookgaard/rookgaard tutorial island/snakeHead.lua" />
@@ -70,7 +75,7 @@
 	<action itemid="6561" script="other/checkbless.lua" />
 
 	<!-- Ferumbras Quest -->
-	<action actionid="35498" script="FerumbrasReward.lua"/>
+	<action actionid="35498" script="FerumbrasReward.lua" />
 
 	<!-- Taming Items -->
 	<action itemid="5907" script="other/taming.lua" />
@@ -245,15 +250,15 @@
 	<action uniqueid="2007" script="quests/behemoth/lever.lua" />
 
 	<!-- Prison Roshamuul -->
-	<action itemid="22605" script="prison/copper.lua"/>
-	<action itemid="22604" script="prison/silver.lua"/>
-	<action itemid="22606" script="prison/bronze.lua"/>
-	<action itemid="22607" script="prison/golden.lua"/>
+	<action itemid="22605" script="prison/copper.lua" />
+	<action itemid="22604" script="prison/silver.lua" />
+	<action itemid="22606" script="prison/bronze.lua" />
+	<action itemid="22607" script="prison/golden.lua" />
 
 	<!-- Mount Ursagrodon -->
-	<action itemid="22719" script="chyllfroest/ursagrodon.lua"/>
-	<action uniqueid="22706" script="chyllfroest/tinderBoxQuest.lua"/>
-	<action itemid="22721" script="chyllfroest/tinderBox.lua"/>
+	<action itemid="22719" script="chyllfroest/ursagrodon.lua" />
+	<action uniqueid="22706" script="chyllfroest/tinderBoxQuest.lua" />
+	<action itemid="22721" script="chyllfroest/tinderBox.lua" />
 
 	<!-- Bigfoot Burden Quest -->
 	<action fromuid="3124" touid="3127" script="quests/bigfoot burden/music.lua" />
