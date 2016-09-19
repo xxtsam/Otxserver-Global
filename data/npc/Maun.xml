@@ -8,9 +8,6 @@
 		animate dead rune,2316,375;
 		arrow,2544,3;
 		basket,1989,6;
-		ultimate mp,26029,350;
-			Supreme Health Potion,26031,500;
-			ultimate spirit potion,26030,350;
 		bolt,2543,4;
 		bottle,2007,3,0;
 		bow,2456,400;
@@ -20,8 +17,8 @@
 		closed trap,2578,280;
 		crossbow,2455,500;
 		crowbar,2416,260;
-		crystalline arrow.,18304,20;
-		desintegrate rune,2310,26;
+		crystalline arrow,18304,20;
+		disintegrate rune,2310,26;
 		drill bolt,18436,12;
 		earth arrow,7850,5;
 		energy bomb rune,2262,162;
@@ -29,6 +26,7 @@
 		fireball rune,2302,30;
 		fishing rod,2580,150;
 		flaming arrow,7840,5;
+		flash arrow,7838,5;
 		great health potion,7591,190;
 		great mana potion,7590,120;
 		great spirit potion,8472,190;
@@ -39,7 +37,7 @@
 		magic wall rune,2293,116;
 		mana potion,7620,50;
 		onyx arrow,7365,7;
-		paralyze rune,2278,700;
+		paralyse rune,2278,700;
 		pick,2553,50;
 		piercing bolt,7363,5;
 		poison bomb rune,2286,85;
@@ -57,11 +55,14 @@
 		Stone Shower Rune,2288,37;
 		strong health potion,7588,100;
 		strong mana potion,7589,80;
+		supreme health potion,26031,500;
 		tarsal arrow,15648,6;
 		throwing star,2399,42;
 		Thunderstorm Rune,2315,37;
 		torch,2050,2;
 		ultimate health potion,8473,310;
+		ultimate mana potion,26029,350;
+		ultimate spirit potion,26030,350;
 		vortex bolt,15649,6;
 		watch,2036,20;
 		Wild Growth Rune,2269,160;
