@@ -36,8 +36,11 @@
 			strong health potion,7588,100;
 			strong mana potion,7589,80;
 			sudden death rune,2268,108;
+			Supreme Health Potion,26031,500;
 			ultimate healing rune,2273,175;
-			ultimate health potion,8473,310;" />
+			ultimate health potion,8473,310;
+			Ultimate Mana Potion,26029,350;
+			Ultimate Spirit Potion,26030,350;" />
 		<parameter key="shop_sellable" value="
 			empty potion flask,7634,5;
 			empty potion flask,7635,5;

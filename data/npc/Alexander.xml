@@ -8,7 +8,7 @@
 			animate dead rune,2316,375;
 			blank rune,2260,10;
 			crystal ball,2192,530;
-			desintegrate rune,2310,26;
+			disintegrate rune,2310,26;
 			energy bomb rune,2262,162;
 			fireball rune,2302,30;
 			hailstorm rod,2183,15000;
@@ -19,7 +19,7 @@
 			moonlight rod,2186,1000;
 			necrotic rod,2185,5000;
 			northwind rod,8911,7500;
-			paralyze rune,2278,700;
+			paralyse rune,2278,700;
 			poison bomb rune,2286,85;
 			snakebite rod,2182,500;
 			soulfire rune,2308,46;

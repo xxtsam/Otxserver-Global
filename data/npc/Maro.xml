@@ -2,39 +2,51 @@
 <npc name="Maro" script="Maro.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="25" />
-	<parameters>
+		<parameters>
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="
-			basket,1989,6;
-			bottle,2007,3,0;
-			bucket,2005,4,0;
-			candlestick,2047,2;
-			closed trap,2578,280;
-			crowbar,2416,260;
-			cup,2013,3,0;
-			document,1952,12;
-			fishing rod,2580,150;
-			machete,2420,35;
-			pick,2553,50;
-			plate,2035,6;
-			purple backpack,2001,20;
-			purple bag,9075,5;
-			rope,2120,50;
-			scroll,1949,5;
-			scythe,2550,50;
-			shovel,2554,50;
-			torch,2050,2;
-			worm,3976,1;" />
+		Backpack,1988,10;
+		Baking Tray,2561,20;
+		Basket,1989,6;
+		Bottle,2007,3,0;
+		Bucket,2005,4,0;
+		Candelabrum,2041,8;
+		Candlestick,2047,2;
+		Cleaver,2568,15;
+		Closed Trap,2578,280;
+		Crowbar,2416,260;
+		Cup,2013,2,0;
+		Fishing Rod,2580,150;
+		Fork,2564,10;
+		Hoe,2552,15;
+		Jug,2014,10,0;
+		Kitchen Knife,2566,10;
+		Machete,2420,35;
+		Mug,2012,1,0;
+		Pan,2563,20;
+		Pick,2553,50;
+		Plate,2035,6;
+		Present,1990,10;
+		Rake,2549,20;
+		Rope,2120,50;
+		Scythe,2550,25;
+		Shovel,2554,20;
+		Spoon,2565,10;
+		Torch,2050,2;
+		Watch,2036,20;
+		Watering Can,7734,50;
+		Wooden Spoon,2567,5;
+		Worm,3976,1;" />
 		<parameter key="shop_sellable" value="
-			closed trap,2578,75;
-			crowbar,2416,50;
-			fishing rod,2580,40;
-			machete,2420,6;
-			pick,2553,15;
-			rope,2120,15;
-			scythe,2550,10;
-			shovel,2554,8;
-			watch,2036,6;
-			wooden hammer,2556,15;" />
+		Closed Trap,2578,75;
+		Crowbar,2416,50;
+		Fishing Rod,2580,40;
+		Machete,2420,6;
+		Pick,2553,15;
+		Rope,2120,15;
+		Scythe,2550,10;
+		Shovel,2554,8;
+		Watch,2036,6;
+		Wooden Hammer,2556,15;" />
 	</parameters>
 </npc>
