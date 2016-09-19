@@ -100,4 +100,7 @@
 	<mount id="98" clientid="888" name="Reed Lurker" speed="20" premium="no" />
 	<mount id="99" clientid="889" name="Neon Sparkid" speed="20" premium="no" />
 	<mount id="100" clientid="890" name="Vortexion" speed="20" premium="no" />
+	<mount id="100" clientid="901" name="White Wolf" speed="20" premium="no" />
+	<mount id="100" clientid="902" name="Black Wolf" speed="20" premium="no" />
+	<mount id="100" clientid="903" name="Winter Wolf" speed="20" premium="no" />
 </mounts>
