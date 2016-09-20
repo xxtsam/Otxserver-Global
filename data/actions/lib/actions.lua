@@ -287,6 +287,20 @@ end
 
 function onUsePick(player, item, fromPosition, target, toPosition, isHotkey)
 	local targetId, targetActionId = target.itemid, target.actionid
+		--Lower Roshamuul
+    if (target ~= nil) and target:isItem() and (target:getId() == 22469) then
+    if math.random(100) > 50 then
+        player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Crushing the stone produces some fine gravel.")
+        target:transform(22467)
+        target:decay()
+    else
+        Game.createMonster("Frazzlemaw", toPosition)
+        player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Crushing the stone yields nothing but slightly finer, yet still unusable rubber.")
+        target:transform(22468)
+        target:decay()
+    end
+       return true
+    end
 	if isInArray({354, 355}, targetId) and (target:hasAttribute(ITEM_ATTRIBUTE_UNIQUEID) or target:hasAttribute(ITEM_ATTRIBUTE_ACTIONID)) then
 		target:transform(392)
 		target:decay()

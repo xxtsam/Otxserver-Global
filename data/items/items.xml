@@ -33020,6 +33020,32 @@
 		<attribute key="showduration" value="1" />
 	</item>
 	<!-- 10.94 FIM -->
+	
+	<!-- roshamuul -->
+	<item id="22456" article="an" name="instable vortex" />
+        <item id="22459" name="chalk">
+        <attribute key="description" value="This chalk could be gathered with an available bucket." />
+    </item>
+    <item id="22467" name="fine gravel">
+        <attribute key="decayTo" value="22469" />
+        <attribute key="duration" value="60" />
+    </item>
+    <item id="22468" name="rubble">
+       <attribute key="decayTo" value="22469" />
+       <attribute key="duration" value="60" />
+    </item>
+    <item id="22469" name="stone">
+       <attribute key="description" value="This stone seems quite suited to crush some fine gravel." />
+    </item>
+    <item id="22470" name="chalk residues">
+       <attribute key="description" value="There is some chalk on this floor. Not enough to fill even a small bucket, however." />
+       <attribute key="decayTo" value="22459" />
+       <attribute key="duration" value="120" />
+    </item>
+       <item id="22550" article="a" name="trough for mortar">
+       <attribute key="description" value="This trough should hold a large amount of mortar." />
+    </item>
+	
 	<!-- VENDA 10.94 NO SITE -->	
 	<item id="26268" article="a" name="Crossbow of Mayhem (infinite)">
 		<attribute key="weight" value="6500" />

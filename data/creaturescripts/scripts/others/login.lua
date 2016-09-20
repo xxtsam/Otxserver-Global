@@ -104,6 +104,7 @@ function onLogin(player)
 	for i = 1, #events do
 		player:registerEvent(events[i])
 		player:registerEvent("BossParticipation")
+		player:registerEvent("lowerRoshamuul")
 	end
 
 	if player:getStorageValue(Storage.combatProtectionStorage) <= os.time() then

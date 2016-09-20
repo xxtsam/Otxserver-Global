@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
+    <!-- Lower Roshamuul Quest -->
+    <action itemid="22387" script="roshamuul/mixture.lua" />
+    <action itemid="22388" script="roshamuul/mixture.lua" />
+    <action itemid="22459" script="roshamuul/chalk.lua" />
+    <action itemid="22467" script="roshamuul/gravel.lua" />
+    <action itemid="22503" script="roshamuul/mortar.lua" />
+    <action itemid="22504" script="roshamuul/trough.lua" />
+
 	<!-- Quests
 	<action itemid="1740" script="quests/quests.lua" />
 	<action fromid="1747" toid="1749" script="quests/quests.lua" />

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <creaturescripts>
+    <!-- Roshamuul Lower -->
+    <event type="kill" name="lowerRoshamuul" script="quests/roshamuul quest/lowerRoshamuul.lua"/>
+	
 	<!-- BattleField Event -->
 	<event type="login" name="battleflogin" script="others/battlefield.lua"/>
 	<event type="preparedeath" name="battledeath" script="others/battlefield.lua"/>

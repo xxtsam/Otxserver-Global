@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
+    <!-- Lower Roshamuul Quest -->
+    <movevent event="StepIn" itemid="22456" script="quests/roshamuul quest/lowerRoshamuul.lua" />
+    <movevent event="StepIn" actionid="1500" script="quests/roshamuul quest/lowerRoshamuul.lua" />
+	
 	<movevent event="StepIn" actionid="19049" script="krailos.lua" />
 	<movevent event="StepIn" fromuid="64001" touid="64003" script="others/isle1.lua" /> <!-- ENTRADA -->
 	<movevent event="StepIn" pos="33498;32613;8" script="others/isle2.lua" /> <!-- SAIDA -->
