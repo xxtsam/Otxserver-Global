@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
+	<movevent event="StepIn" actionid="19049" script="krailos.lua" />
 	<movevent event="StepIn" fromuid="64001" touid="64003" script="others/isle1.lua" /> <!-- ENTRADA -->
 	<movevent event="StepIn" pos="33498;32613;8" script="others/isle2.lua" /> <!-- SAIDA -->
 	<movevent event="StepIn" fromuid="63001" touid="63016" script="others/treinersportal.lua" />
