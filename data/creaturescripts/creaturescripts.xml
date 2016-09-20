@@ -29,7 +29,7 @@
 	<event type="kill" name="NewFrontierTirecz" script="quests/the new frontier/TireczKill.lua" />
 
 	<!-- Lightbearer Quest -->
-	<event type="kill" name="Gloombringer" script="quests/lightbearer quest/GloombringerKill1.lua" />
+	<event type="kill" name="Gloombringer" script="quests/Lightbearer Quest/GloombringerKill1.lua" />
 
 	<!-- In Service Of Yalahar Quest -->
 	<event type="kill" name="ServiceOfYalaharAzerus" script="quests/in service of yalahar/AzerusKill.lua" />
