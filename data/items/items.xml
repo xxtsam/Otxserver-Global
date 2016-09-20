@@ -34565,6 +34565,9 @@
 	<item id="23460" article="a" name="blue pollen">
 		<attribute key="weight" value="50" />
 	</item>
+	<item id="23418" article="a" name="Slime Slide (Objeto)">
+		<attribute key="description" value="You can see the other side through it." />
+	</item>	
 	<item id="23462" article="a" name="dead mooh'tah warrior">
 		<attribute key="containerSize" value="15" />
 		<attribute key="decayTo" value="23463" />
