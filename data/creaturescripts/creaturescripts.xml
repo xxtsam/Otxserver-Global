@@ -29,7 +29,7 @@
 	<event type="kill" name="NewFrontierTirecz" script="quests/the new frontier/TireczKill.lua" />
 
 	<!-- Lightbearer Quest -->
-	<event type="kill" name="Gloombringer" script="quests/Lightbearer Quest/GloombringerKill1.lua" />
+	<event type="kill" name="Gloombringer" script="quests/lightbearer quest/GloombringerKill1.lua" />
 
 	<!-- In Service Of Yalahar Quest -->
 	<event type="kill" name="ServiceOfYalaharAzerus" script="quests/in service of yalahar/AzerusKill.lua" />
@@ -60,19 +60,19 @@
 	<event type="kill" name="WotEZalamon" script="quests/wrath of the emperor/zalamon.lua" />
 
 	<!-- Pythius The Rotten (Firewalker Boots Quest) -->
-	<event type="kill" name="PythiusTheRotten" script="others/PythiusTheRotten.lua" />
+	<event type="kill" name="PythiusTheRotten" script="others/pythiusTheRotten.lua" />
 	
 	<!-- Ascendent Ferumbras Quest -->
 	<event type="kill" name="AscedentFerumbrasQuest" script="quests/Ferumbras.lua" />
 	
-	<!-- <event type="kill" name="AncedentTarbaz" script="others/Tarbaz.lua" />
-	<event type="kill" name="AncedentShulgrax" script="others/Shulgrax.lua" />
-	<event type="kill" name="AncedentPlagirath" script="others/Plagirath.lua" />
-	<event type="kill" name="AncedentZamulosh" script="others/Zamulosh.lua" />
-	<event type="kill" name="AncedentMazoran" script="others/Mazoran.lua" />
-	<event type="kill" name="AncedentRazzagorn" script="others/Razzagorn.lua" />
-	<event type="kill" name="AncedentRagiaz" script="others/Ragiaz.lua" />
-	<event type="kill" name="AncedentFerumbras" script="others/Ferumbras.lua" /> -->
+	<!-- <event type="kill" name="AncedentTarbaz" script="others/tarbaz.lua" />
+	<event type="kill" name="AncedentShulgrax" script="others/shulgrax.lua" />
+	<event type="kill" name="AncedentPlagirath" script="others/plagirath.lua" />
+	<event type="kill" name="AncedentZamulosh" script="others/zamulosh.lua" />
+	<event type="kill" name="AncedentMazoran" script="others/mazoran.lua" />
+	<event type="kill" name="AncedentRazzagorn" script="others/razzagorn.lua" />
+	<event type="kill" name="AncedentRagiaz" script="others/ragiaz.lua" />
+	<event type="kill" name="AncedentFerumbras" script="others/ferumbras.lua" /> -->
 
 	<!-- Bosses -->
 	<event type="death" name="wyda" script="bosses/wyda.lua"/>

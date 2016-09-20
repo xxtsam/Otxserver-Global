@@ -87,12 +87,12 @@ end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, toCylinder)
 	if item:getActionId() == NOT_MOVEABLE_ACTION then
-		self:sendCancelMessage('Sorry, not possible.')
+		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 		return false
 	end
 	
 	if toPosition.x == CONTAINER_POSITION and toCylinder and toCylinder:getId() == 26052 then
-		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
+		self:sendCancelMessage(RETURNVALUE_CONTAINERNOTENOUGHROOM)
 		return false
 	end
 
@@ -132,7 +132,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		-- Do not let the player insert items into either the Reward Container or the Reward Chest
 		local itemId = container:getId()
 		if itemId == ITEM_REWARD_CONTAINER or itemId == ITEM_REWARD_CHEST then
-			self:sendCancelMessage('Sorry, not possible.')
+			self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 			return false
 		end
 
@@ -140,7 +140,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		local tile = Tile(container:getPosition())
 		for _, item in ipairs(tile:getItems()) do
 			if item:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER) == 2^31 - 1 and item:getName() == container:getName() then
-				self:sendCancelMessage('Sorry, not possible.')
+				self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 				return false
 			end
 		end
@@ -148,7 +148,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 
 	-- Do not let the player move the boss corpse.
 	if item:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER) == 2^31 - 1 then
-		self:sendCancelMessage('Sorry, not possible.')
+		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 		return false
 	end
 
@@ -168,7 +168,7 @@ end
 
 function Player:onTradeRequest(target, item)
 	if isInArray({1738, 1740, 1747, 1748, 1749, 8766}, item.itemid) and item.actionid > 0 or item.actionid == 5640 then
-		self:sendCancelMessage('Sorry, not possible.')
+		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 		return false
 	end
 	return true

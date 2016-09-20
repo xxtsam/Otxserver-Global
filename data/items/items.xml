@@ -24,28 +24,24 @@
 		<attribute key="decayTo" value="23712" />
 		<attribute key="duration" value="60" />
 	</item>
- 
- <item id="26052" article="your" name="store inbox">
-     <attribute key="containerSize" value="20" />
-   </item>
-   
+	<item id="26052" article="your" name="store inbox">
+		<attribute key="containerSize" value="20" />
+	</item>
 	<item id="24683" article="an" name="Bless Item">
 		<attribute key="weight" value="100" />
 		<attribute key="slotType" value="ammo" />	
 		<attribute key="description" value="Click for activate all the blessings." />	
 	</item>
-	
-  <item id="24301" article="a" name="receipt">
-  <attribute key="weight" value="25" />
-  <attribute key="description" value="This receipt serves as a reference to a successful guild bank transfer." />
-  <attribute key="readable" value="1" />
-  </item>
-  <item id="24302" article="a" name="receipt">
-  <attribute key="weight" value="25" />
-  <attribute key="description" value="This receipt serves as a reference to an unsuccessful guild bank transfer." />
-  <attribute key="readable" value="1" />
-  </item>
- 
+	<item id="24301" article="a" name="receipt">
+		<attribute key="weight" value="25" />
+		<attribute key="description" value="This receipt serves as a reference to a successful guild bank transfer." />
+		<attribute key="readable" value="1" />
+	</item>
+	<item id="24302" article="a" name="receipt">
+		<attribute key="weight" value="25" />
+		<attribute key="description" value="This receipt serves as a reference to an unsuccessful guild bank transfer." />
+		<attribute key="readable" value="1" />
+	</item>
 	<item fromid="351" toid="353" name="dirt floor" />
 	<item id="354" name="muddy floor" />
 	<item id="355" name="muddy floor">
@@ -1135,12 +1131,10 @@
 		<attribute key="weight" value="3500" />
 		<attribute key="containerSize" value="10" />
 	</item>
-	
 	<item id="21396" article="a" name="box">
 		<attribute key="weight" value="3500" />
 		
 	</item>
-	
 	<item id="1742" article="a" name="wooden coffin">
 		<attribute key="containerSize" value="6" />
 	</item>
