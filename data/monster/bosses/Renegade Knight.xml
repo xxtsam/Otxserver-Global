@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Renegade Knight" nameDescription="Renegade Knight" race="blood" experience="1200" speed="170" manacost="0">
     <health now="1450" max="1450" />
-    <look type="268" head="97" body="132" legs="95" feet="98" addons="2" corpse="24671" />
+    <look type="268" head="97" body="132" legs="95" feet="98" addons="2" corpse="24676" />
 	<targetchange interval="4000" chance="10"/>
 	<flags>
         <flag summonable="1"/>
