@@ -4022,6 +4022,11 @@ void Player::addUnjustifiedDead(const Player* attacked)
 			setSkull(SKULL_RED);
 		}
 	}
+
+	if (!client) {
+		return;
+	}
+	client->sendSkullTime();
 }
 
 void Player::checkSkullTicks(int32_t ticks)
