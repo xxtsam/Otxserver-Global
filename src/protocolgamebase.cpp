@@ -549,6 +549,32 @@ void ProtocolGameBase::sendMagicEffect(const Position& pos, uint8_t type)
 	writeToOutputBuffer(msg);
 }
 
+void ProtocolGameBase::sendSkullTime()
+{
+	int skullTime = (double) player->getSkullTicks();
+	if (skullTime <= 0) {
+		skullTime = 0;
+	}
+
+	int fragTime = (double) g_config.getNumber(ConfigManager::FRAG_TIME);
+	int kills = std::ceil(((double) skullTime / fragTime));
+
+	short killsToRed = g_config.getNumber(ConfigManager::KILLS_TO_RED);
+	short percentage = std::min<uint16_t>(((100 / killsToRed) * kills), 100);
+	short killsLeft = killsToRed - kills;
+
+	NetworkMessage msg;
+	msg.addByte(0xB7);
+	msg.addByte(percentage);
+	msg.addByte(killsLeft);
+	msg.addByte(percentage);
+	msg.addByte(killsLeft);
+	msg.addByte(percentage);
+	msg.addByte(killsLeft);
+	msg.addByte(skullTime < time(nullptr) + skullTime ? 0 : std::ceil(((double) skullTime - (double) time(nullptr)) / (double) 86400));
+	writeToOutputBuffer(msg);
+}
+
 void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position& pos, int32_t stackpos, bool isLogin)
 {
 	if (!canSee(pos)) {
@@ -666,6 +692,7 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 
 	sendBasicData();
 	sendInventoryClientIds();
+	sendSkullTime();
 	player->sendIcons();
 }
 
