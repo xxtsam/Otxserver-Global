@@ -61,8 +61,8 @@
 	<movevent event="StepIn" fromuid="50500" touid="50501" script="others/oramondEntrance.lua" />
 	<movevent event="StepIn" fromuid="50510" touid="50511" script="others/oramondTeleports.lua" />
 	<movevent event="StepIn" uniqueid="26798" script="others/seacrest.lua" />
-	<movevent event="StepIn" actionid="36489" script="others/glooth.lua" />
-	<movevent event="StepIn" actionid="50389" script="others/gloothvolta.lua" />
+	<movevent event="StepIn" actionid="50389" script="others/glooth.lua" /> <!-- feito -->
+	<movevent event="StepIn" actionid="36489" script="others/gloothvolta.lua" /> <!-- feito -->
 
 	<!-- Explorer Society (Calassa) -->
 	<movevent event="StepIn" actionid="2070" script="others/calassa.lua" />
