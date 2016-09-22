@@ -77,6 +77,7 @@
 	<action fromid="2146" toid="2147" script="other/enchanting.lua" />
 	<action fromid="2149" toid="2150" script="other/enchanting.lua" />
 	<action fromid="7759" toid="7762" script="other/enchanting.lua" />
+	<action itemid="24739" script="other/enchanting.lua" /> <!-- feito -->
 
 	<!-- Ceremonial ankh & Ornamented brooch -->
 	<action itemid="12424" script="other/checkbless.lua" />
