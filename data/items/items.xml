@@ -105,6 +105,9 @@
 	<item id="23935" article="a" name="stairs">
 		<attribute key="floorchange" value="west" />
 	</item>
+	<item id="20977" article="a" name="stairs">
+		<attribute key="floorchange" value="west" />
+	</item>
 	<item id="23939" article="a" name="stairs">
 		<attribute key="floorchange" value="north" />
 	</item>
