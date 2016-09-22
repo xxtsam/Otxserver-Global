@@ -24,12 +24,12 @@ function creatureSayCallback(cid, type, msg)
           local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 local player = Player(cid)
           if msgcontains(msg, 'demonic essence') or msgcontains(msg, 'short') then
-		  if player:getStorageValue(88419) <= 0 then 
+		  if player:getStorageValue(45970) <= 0 then 
                     if getPlayerItemCount(cid, items.item1[1]) >= counts.count1[1] then
                               doPlayerRemoveItem(cid, items.item1[1], counts.count1[1])
                               doPlayerAddItem(cid, items.item1[2], counts.count1[2])
                               selfSay('Excellente! Now you can pass in the teleport.', cid)
-							 player:setStorageValue(88419, 1)
+							 player:setStorageValue(45970, 1)
                     else
                               selfSay('You need '.. counts.count1[1] ..' '.. getItemName(items.item1[1]) ..'.', cid)
                     end
