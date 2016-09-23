@@ -3321,19 +3321,11 @@
 		<attribute key="speed" value="60" />
 	</item>	
 	
-	<item id="21252" article="a" name="Viking Ring">
-        <attribute key="weight" value="90" />
-        <attribute key="slotType" value="ring" />  
-		<attribute key="speed" value="40" />
-		<attribute key="healthGain" value="10" />
-		<attribute key="healthTicks" value="1000" />
-		<attribute key="manaGain" value="30" />
-		<attribute key="manaTicks" value="1000" />
-		<attribute key="showattributes" value="1" />
-		<attribute key="showduration" value="1" />
-        <attribute key="description" value="Faster regeneration and infinity." />
-	</item>
-	
+	<item id="21252" article="a" name="vampire's signet ring">
+		<attribute key="description" value="A ring with a massive, faintly glowing seal, containing the blood of a vampire." />
+		<attribute key="weight" value="10" />
+	</item>	
+
 	<item id="2359" article="a" name="djinn's lamp">
 		<attribute key="description" value="(This item has 2 charges left)." />
 		<attribute key="weight" value="600" />
