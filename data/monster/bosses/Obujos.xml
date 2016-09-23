@@ -60,8 +60,10 @@
 		<element deathPercent="-20"/>
 	</elements>
 	<loot>
-		<item id="15411" chance="100000"/><!-- depth scutum -->
-		<item id="15404" chance="14285"/><!-- deepling axe -->
-		<item id="15412" chance="14285"/><!-- ornate legs -->
+		<item id="15436" chance="51000" uniquedrop="1" /> <!-- Obujos' Shell -->
+		<item id="15619" chance="61000"/><!-- trophy of Obujos -->
+		<item id="15411" chance="90000"/><!-- depth scutum -->
+		<item id="15404" chance="50000"/><!-- deepling axe -->
+		<item id="15412" chance="30000"/><!-- ornate legs -->
 	</loot>
 </monster>
