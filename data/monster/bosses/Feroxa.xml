@@ -64,21 +64,39 @@
 		<voice sentence="THE POWER IS MINE!" yell="1"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="200" chance="98000"/>	<!-- gold coin -->
-		<item id="2152" countmax="20" chance="98000"/>	<!-- gold coin -->
-		<item id="18418" countmax="5" chance="75000"/>	<!-- gold ingot -->
-		<item id="24915" chance="5000"/>				<!-- spellbook of lost souls -->
-		<item id="8922" chance="5000"/>				<!-- golden armor -->
-		<item id="8910" chance="22000"/>				<!-- golden legs -->
-		<item id="24932" chance="22000"/>				<!-- spellbook of mind control -->
-		<item id="7383" chance="2000"/>				<!-- velvet mantle -->
-		<item id="7454" chance="20000"/>				<!-- demon shield -->
-		<item id="24913" chance="5000"/>				<!-- divine plate -->
-		<item id="7419" chance="5000"/>				<!-- magma legs -->
-		<item id="7428" chance="2000"/>				<!-- tempest shield -->
-		<item id="24914" chance="5000"/>				<!-- emerald bangle -->
-		<item id="24912" chance="4000"/>				<!-- glacier kilt -->
-		<item id="7436" chance="18000"/>				<!-- lightning legs -->
-		<item id="24890" chance="3000"/>				<!-- phoenix shield -->
+		<item id="2148" countmax="199" chance="150000"/>		<!-- gold coin -->
+		<item id="2152"  countmax="49" chance="100000"/>		<!-- Platinum Coins-->
+		<item id="24739" countmax="44" chance="150000"/>		<!-- moonlightcrystal -->
+		<item id="8473" countmax="5" chance="75000"/>			<!-- ultimate health potion -->
+		<item id="18414"  countmax="5" chance="75458"/>			<!-- Violet Crystal Shards -->
+		<item id="7591"  countmax="5" chance="75422"/>			<!-- Great Health Potions -->
+		<item id="18417"  countmax="5" chance="75411"/>			<!-- Brown Crystal Splinters -->
+		<item id="18418"  countmax="5" chance="74022"/>			<!-- Blue Crystal Splinters -->
+		<item id="7590"  countmax="5" chance="73104"/>			<!-- Great Mana Potions, -->
+		<item id="8472"  countmax="5" chance="72351"/>			<!-- Great Spirit Potions -->
+		<item id="18415"  countmax="5" chance="74358"/>			<!-- Green Crystal Shards, -->
+		<item id="18416"  countmax="5" chance="72110"/>			<!-- Green Crystal Splinters, -->
+		<item id="2145"  countmax="9" chance="73666"/>			<!-- Small Diamonds -->
+		<item id="9970"  countmax="9" chance="73580"/>			<!-- Small Topazes -->
+		<item id="2146"  countmax="9" chance="72235"/>			<!-- Small Sapphires -->
+		<item id="2147"  countmax="9" chance="75135"/>			<!-- Small Rubies -->
+		<item id="24760" chance="58849"/>				<!-- Trophy of Feroxa -->
+		<item id="24716" chance="51111"/>				<!-- werewolf amulet -->
+		<item id="24743" chance="44001"/>				<!-- wereboar loincloth -->
+		<item id="24741" chance="34020"/>				<!-- Fur Armor -->
+		<item id="24742" chance="44112"/>				<!-- Badger Boots -->
+		<item id="7383" chance="35507"/>				<!-- relic sword -->
+		<item id="8922" chance="44503"/>				<!-- wand of vodoo -->
+		<item id="8910" chance="34034"/>				<!-- underworld rod -->
+		<item id="2197" chance="43080"/>				<!-- stone skin amulet -->
+		<item id="2156" chance="42001"/>				<!-- red gem -->
+		<item id="2158" chance="42110"/>				<!-- Blue Gem -->
+		<item id="7454" chance="24686"/>				<!-- Glorious Axe -->
+		<item id="7419" chance="29100"/>				<!-- Dreaded Cleave -->
+		<item id="7428" chance="28030"/>				<!-- Bonebreaker -->
+		<item id="2195" chance="27601"/>				<!-- Boots of Haste -->
+		<item id="7436" chance="25563"/>				<!-- Angelic Axe -->
+		<item id="24740" chance="64632"/>				<!-- wolf backpack -->
+		<item id="24718" chance="150323" uniquedrop="1" />		<!-- werewolf helmet -->
 	</loot>
 </monster>
