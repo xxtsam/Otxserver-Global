@@ -16,7 +16,7 @@ function essence(cid, message, keywords, parameters, node)
         if getPlayerItemCount(cid,6500) >= 30 and getPlayerStorageValue(cid,54980) <= 0 then
         if doPlayerRemoveItem(cid,6500,30) then
             npcHandler:say('Here is your item!', cid)
-            doPlayerAddItem(cid,25383,1)
+            doPlayerAddItem(cid,24838,1)
             setPlayerStorageValue(cid, 45790, 1)
             setPlayerStorageValue(cid, 54980, 1)
             setPlayerStorageValue(cid, 54981, 1)
@@ -31,6 +31,7 @@ end
 keywordHandler:addKeyword({'short'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You need 30 {demonic essence} to acess quest."})
 
 local node1 = keywordHandler:addKeyword({'demonic essence'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'You want to get access to Ferumbras Ascendant Quest?'})
+     node1 = keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'You want to get access to Ferumbras Ascendant Quest?'})
     node1:addChildKeyword({'yes'}, essence, {npcHandler = npcHandler, onlyFocus = true, reset = true})
     node1:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then. Come back when you got the neccessary items.', reset = true})
 	
