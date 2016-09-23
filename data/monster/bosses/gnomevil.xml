@@ -75,14 +75,12 @@
 		<voice sentence="I'm feeling grrrreat!"/>
 	</voices>     
   <loot>
- 	 <item id="2148" countmax="100" chance="30000"/><!-- Gold Coins --> 
- 	 <item id="2149" countmax="4" chance="33333"/><!-- Small Emerald --> 
         <item id="18453" chance="7800"/><!-- Crystal Crossbow -->              
-        <item id="18495" chance="8000"/><!-- Gnomevil s hat --> 
-        <item id="18465" chance="5000"/><!-- Shiny Blade -->  
+        <item id="18495" chance="100000"/><!-- Gnomevil s hat --> 
+        <item id="18465" chance="5500"/><!-- Shiny Blade -->  
         <item id="18454" chance="8000"/><!-- Mycological Bow --> 
         <item id="18452" chance="6000"/><!-- Mycological Mace --> 
         <item id="18450" chance="10000"/><!-- Crystalline Sword --> 
-        <item id="18449" chance="9000"/><!-- Decorative Ribbon --> 
+        <item id="18449" chance="5000"/><!-- Decorative Ribbon --> 
 </loot>
 </monster>
