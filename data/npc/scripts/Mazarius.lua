@@ -1,45 +1,37 @@
- local keywordHandler = KeywordHandler:new()
+local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
-local talkState = {}
- 
-function onCreatureAppear(cid)    npcHandler:onCreatureAppear(cid)   end
-function onCreatureDisappear(cid)   npcHandler:onCreatureDisappear(cid)   end
-function onCreatureSay(cid, type, msg)   npcHandler:onCreatureSay(cid, type, msg)  end
-function onThink()     npcHandler:onThink()     end
- 
-local items = {
-          item1 = {6500, 24838} -- item1 item que será pedido e que será dado na primeira troca
-		 
-}
-local counts = {
-          count1 = {30, 1}
-		 
-}
- 
-function creatureSayCallback(cid, type, msg)
-          if(not npcHandler:isFocused(cid)) then
-                    return false
-          end
-          local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
-local player = Player(cid)
-          if msgcontains(msg, 'demonic essence') or msgcontains(msg, 'short') then
-		  if player:getStorageValue(45970) <= 0 then 
-                    if getPlayerItemCount(cid, items.item1[1]) >= counts.count1[1] then
-                              doPlayerRemoveItem(cid, items.item1[1], counts.count1[1])
-                              doPlayerAddItem(cid, items.item1[2], counts.count1[2])
-                              selfSay('Excellente! Now you can pass in the teleport.', cid)
-							 player:setStorageValue(45970, 1)
-                    else
-                              selfSay('You need '.. counts.count1[1] ..' '.. getItemName(items.item1[1]) ..'.', cid)
-                    end
 
-          				
-					
-          end
-		  selfSay('You already have access to teleport.', cid)
-          return TRUE
+function onCreatureAppear(cid)            npcHandler:onCreatureAppear(cid)        end
+function onCreatureDisappear(cid)        npcHandler:onCreatureDisappear(cid)        end
+function onCreatureSay(cid, type, msg)        npcHandler:onCreatureSay(cid, type, msg)    end
+function onThink()                npcHandler:onThink()                end
+
+-- XVX FORGER START --
+
+function essence(cid, message, keywords, parameters, node)
+    if not npcHandler:isFocused(cid) then
+        return false
+    end
+        if getPlayerItemCount(cid,6500) >= 30 and getPlayerStorageValue(cid,54980) <= 0 then
+        if doPlayerRemoveItem(cid,6500,30) then
+            npcHandler:say('Here is your item!', cid)
+            doPlayerAddItem(cid,25383,1)
+            setPlayerStorageValue(cid, 45790, 1)
+            setPlayerStorageValue(cid, 54980, 1)
+            setPlayerStorageValue(cid, 54981, 1)
+        end
+        else
+            npcHandler:say('You do not have the required items or already have access to teleport.', cid)
+    end
 end
-end
-npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
+
+-- XVX FORGER END --
+
+keywordHandler:addKeyword({'short'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You need 30 {demonic essence} to acess quest."})
+
+local node1 = keywordHandler:addKeyword({'demonic essence'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'You want to get access to Ferumbras Ascendant Quest?'})
+    node1:addChildKeyword({'yes'}, essence, {npcHandler = npcHandler, onlyFocus = true, reset = true})
+    node1:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then. Come back when you got the neccessary items.', reset = true})
+	
 npcHandler:addModule(FocusModule:new())
