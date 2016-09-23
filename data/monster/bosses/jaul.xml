@@ -65,13 +65,15 @@
 		<element deathPercent="-1"/>
 	</elements>
 	<loot>
-		<item id="15413" chance="5000"/><!-- ornate shield -->
-		<item id="15408" chance="3333"/><!-- depth galea -->
-		<item id="15404" chance="2500"/><!-- deepling axe -->
-		<item id="15406" chance="2500"/><!-- ornate chestplate -->
-		<item id="15407" chance="2000"/><!-- depth lorica -->
-		<item id="15410" chance="1428"/><!-- depth calcei -->
-		<item id="15414" chance="1428"/><!-- ornate mace -->
-		<item id="15412" chance="7142"/><!-- ornate legs -->
+		<item id="15434" chance="31000" uniquedrop="1" /> <!-- Jaul's Pearl -->
+		<item id="15621" chance="61000"/><!-- trophy of Jaul -->
+		<item id="15413" chance="41000"/><!-- ornate shield -->
+		<item id="15414" chance="31000"/><!-- ornate mace -->
+		<item id="15404" chance="30000"/><!-- deepling axe -->
+		<item id="15408" chance="25000"/><!-- depth galea -->
+		<item id="15412" chance="20050"/><!-- ornate legs -->
+		<item id="15410" chance="19033"/><!-- depth calcei -->
+		<item id="15407" chance="15034"/><!-- depth lorica -->
+		<item id="15406" chance="12998"/><!-- ornate chestplate -->
 	</loot>
 </monster>
