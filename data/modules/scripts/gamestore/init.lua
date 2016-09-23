@@ -280,7 +280,7 @@ function parseOpenTransactionHistory(player, msg)
 	sendStoreTransactionHistory(player, page, GameStore.DefaultValues.DEFAULT_VALUE_ENTRIES_PER_PAGE)
 end
 function parseRequestTransactionHistory(player, msg)
-	local page = msg:getU16()
+	local page = msg:getU32()
 	sendStoreTransactionHistory(player, page, GameStore.DefaultValues.DEFAULT_VALUE_ENTRIES_PER_PAGE)
 end
 --==Sending==--
@@ -426,8 +426,8 @@ function sendStoreTransactionHistory(player, page, entriesPerPage)
 	
 	local msg = NetworkMessage()
 	msg:addByte(GameStore.SendingPackets.S_OpenTransactionHistory)
-	msg:addU16(page)
-	msg:addByte(#entries > entriesPerPage and 0x01 or 0x00)
+	msg:addU32(page)
+	msg:addU32(#entries > entriesPerPage and 0x01 or 0x00)
 	
 	msg:addByte(#entries >= entriesPerPage and entriesPerPage or #entries)
 	for k, entry in ipairs(entries) do
@@ -516,8 +516,7 @@ GameStore.insertHistory = function(accountId, mode, description, amount)
 end
 GameStore.retrieveHistoryEntries = function(accountId)
 	local entries = {}
-	local resultId = db.storeQuery("SELECT * FROM `store_history` WHERE `account_id` = '0' ORDER BY `time` DESC LIMIT 15;")
-	if resultId ~= false then
+local resultId = db.storeQuery("SELECT * FROM `store_history` WHERE `account_id` = " .. accountId .. " ORDER BY `time` DESC LIMIT 15;")	if resultId ~= false then
 		repeat
 			local entry = {
 				mode = result.getDataInt(resultId, "mode"),
