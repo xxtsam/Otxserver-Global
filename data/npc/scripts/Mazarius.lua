@@ -7,7 +7,6 @@ function onCreatureDisappear(cid)        npcHandler:onCreatureDisappear(cid)    
 function onCreatureSay(cid, type, msg)        npcHandler:onCreatureSay(cid, type, msg)    end
 function onThink()                npcHandler:onThink()                end
 
--- XVX FORGER START --
 
 function essence(cid, message, keywords, parameters, node)
     if not npcHandler:isFocused(cid) then
@@ -26,7 +25,6 @@ function essence(cid, message, keywords, parameters, node)
     end
 end
 
--- XVX FORGER END --
 
 keywordHandler:addKeyword({'short'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You need 30 {demonic essence} to acess quest."})
 
