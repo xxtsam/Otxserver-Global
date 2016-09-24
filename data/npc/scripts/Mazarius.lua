@@ -31,7 +31,6 @@ end
 keywordHandler:addKeyword({'short'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "You need 30 {demonic essence} to acess quest."})
 
 local node1 = keywordHandler:addKeyword({'demonic essence'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'You want to get access to Ferumbras Ascendant Quest?'})
-     node1 = keywordHandler:addKeyword({'mission'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'You want to get access to Ferumbras Ascendant Quest?'})
     node1:addChildKeyword({'yes'}, essence, {npcHandler = npcHandler, onlyFocus = true, reset = true})
     node1:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then. Come back when you got the neccessary items.', reset = true})
 	
