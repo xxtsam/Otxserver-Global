@@ -791,6 +791,7 @@
 
 	
 	<!-- Bosses -->
+	<monster name="Rift Invader" file="1090/Rift Invader.xml"/>
 	<monster name="Destabilized Ferumbras" file="1090/Destabilized Ferumbras.xml"/>
 	<monster name="Ferumbras Mortal Shell" file="1090/Ferumbras Mortal Shell.xml"/>
 	<monster name="Ferumbras Soul Splinter" file="1090/Ferumbras Soul Splinter.xml"/>
