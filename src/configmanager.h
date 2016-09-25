@@ -25,6 +25,8 @@
 class ConfigManager
 {
 	public:
+		ConfigManager();
+
 		enum boolean_config_t {
 			ALLOW_CHANGEOUTFIT,
 			ONE_PLAYER_ON_ACCOUNT,
@@ -45,7 +47,6 @@ class ConfigManager
 			ALLOW_WALKTHROUGH,
 			ENABLE_LIVE_CASTING,
 			ALLOW_BLOCK_SPAWN,
-			EXPERT_PVP,
 
 			LAST_BOOLEAN_CONFIG /* this must be the last one */
 		};
@@ -131,10 +132,10 @@ class ConfigManager
 		static bool getGlobalBoolean(lua_State* L, const char* identifier, const bool defaultValue);
 
 		std::string string[LAST_STRING_CONFIG];
-		int32_t integer[LAST_INTEGER_CONFIG] = { 0 };
-		bool boolean[LAST_BOOLEAN_CONFIG] = { false };
+		int32_t integer[LAST_INTEGER_CONFIG];
+		bool boolean[LAST_BOOLEAN_CONFIG];
 
-		bool loaded = false;
+		bool loaded;
 };
 
 #endif

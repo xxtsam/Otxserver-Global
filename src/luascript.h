@@ -156,26 +156,25 @@ class ScriptEnvironment
 		typedef std::map<uint32_t, int32_t> StorageMap;
 		typedef std::map<uint32_t, DBResult_ptr> DBResultMap;
 
-		LuaScriptInterface* interface;
-
-		//for npc scripts
-		Npc* curNpc = nullptr;
-
-		//temporary item list
-		static std::multimap<ScriptEnvironment*, Item*> tempItems;
-
-		//local item map
-		std::unordered_map<uint32_t, Item*> localMap;
-		uint32_t lastUID = std::numeric_limits<uint16_t>::max();
-
 		//script file id
 		int32_t scriptId;
 		int32_t callbackId;
 		bool timerEvent;
+		LuaScriptInterface* interface;
+
+		//local item map
+		uint32_t lastUID;
+		std::unordered_map<uint32_t, Item*> localMap;
+
+		//temporary item list
+		static std::multimap<ScriptEnvironment*, Item*> tempItems;
 
 		//result map
 		static uint32_t lastResultId;
 		static DBResultMap tempResults;
+
+		//for npc scripts
+		Npc* curNpc;
 };
 
 #define reportErrorFunc(a)  reportError(__FUNCTION__, a, true)
@@ -212,6 +211,7 @@ class LuaScriptInterface
 		int32_t loadFile(const std::string& file, Npc* npc = nullptr);
 
 		const std::string& getFileById(int32_t scriptId);
+		int32_t getEvent();
 		int32_t getEvent(const std::string& eventName);
 		int32_t getMetaEvent(const std::string& globalName, const std::string& eventName);
 
@@ -819,8 +819,6 @@ class LuaScriptInterface
 
 		static int luaCreatureGetPathTo(lua_State* L);
 
-		static int luaCreatureMoveTo(lua_State* L);
-
 		// Player
 		static int luaPlayerCreate(lua_State* L);
 
@@ -987,16 +985,6 @@ class LuaScriptInterface
 		static int32_t luaPlayerStopLiveCast(lua_State* L);
 		static int32_t luaPlayerIsLiveCaster(lua_State* L);
 		static int32_t luaPlayerGetSpectators(lua_State* L);
-
-		static int luaPlayerGetChaseMode(lua_State* L);
-		static int luaPlayerGetFightMode(lua_State* L);
-		static int luaPlayerGetSecureMode(lua_State* L);
-		static int luaPlayerGetPvpMode(lua_State* L);
-
-		static int luaPlayerSetChaseMode(lua_State* L);
-		static int luaPlayerSetFightMode(lua_State* L);
-		static int luaPlayerSetSecureMode(lua_State* L);
-		static int luaPlayerSetPvpMode(lua_State* L);
 
 		// Monster
 		static int luaMonsterCreate(lua_State* L);

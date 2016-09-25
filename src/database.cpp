@@ -26,6 +26,12 @@
 
 extern ConfigManager g_config;
 
+Database::Database()
+{
+	handle = nullptr;
+	maxPacketSize = 1048576;
+}
+
 Database::~Database()
 {
 	if (handle != nullptr) {

@@ -29,6 +29,12 @@
 
 extern Game g_game;
 
+ConfigManager::ConfigManager()
+	: integer(), boolean()
+{
+	loaded = false;
+}
+
 bool ConfigManager::load()
 {
 	lua_State* L = luaL_newstate();
@@ -91,7 +97,6 @@ bool ConfigManager::load()
 	boolean[ALLOW_WALKTHROUGH] = getGlobalBoolean(L, "allowWalkthrough", true);
 	boolean[ENABLE_LIVE_CASTING] = getGlobalBoolean(L, "enableLiveCasting", true);
 	boolean[ALLOW_BLOCK_SPAWN] = getGlobalBoolean(L, "allowBlockSpawn", true);
-	boolean[EXPERT_PVP] = getGlobalBoolean(L, "expertPvp", true);
 
 	string[DEFAULT_PRIORITY] = getGlobalString(L, "defaultPriority", "high");
 	string[SERVER_NAME] = getGlobalString(L, "serverName", "");

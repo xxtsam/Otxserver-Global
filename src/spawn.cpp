@@ -35,6 +35,12 @@ extern Game g_game;
 
 #define MINSPAWN_INTERVAL 1000
 
+Spawns::Spawns()
+{
+	loaded = false;
+	started = false;
+}
+
 bool Spawns::loadFromXml(const std::string& filename)
 {
 	if (loaded) {

@@ -550,19 +550,20 @@ void ProtocolGameBase::sendMagicEffect(const Position& pos, uint8_t type)
 }
 
 void ProtocolGameBase::sendSkullTime()
-{
-	int skullTime = (double) player->getSkullTicks();
+ {
+	int skullTime = (double)player->getSkullTicks();
 	if (skullTime <= 0) {
 		skullTime = 0;
+		
 	}
-
-	int fragTime = (double) g_config.getNumber(ConfigManager::FRAG_TIME);
-	int kills = std::ceil(((double) skullTime / fragTime));
-
-	short killsToRed = g_config.getNumber(ConfigManager::KILLS_TO_RED);
+	
+		int fragTime = (double)g_config.getNumber(ConfigManager::FRAG_TIME);
+	int kills = std::ceil(((double)skullTime / fragTime));
+	
+		short killsToRed = g_config.getNumber(ConfigManager::KILLS_TO_RED);
 	short percentage = std::min<uint16_t>(((100 / killsToRed) * kills), 100);
 	short killsLeft = killsToRed - kills;
-
+	
 	NetworkMessage msg;
 	msg.addByte(0xB7);
 	msg.addByte(percentage);
@@ -571,9 +572,9 @@ void ProtocolGameBase::sendSkullTime()
 	msg.addByte(killsLeft);
 	msg.addByte(percentage);
 	msg.addByte(killsLeft);
-	msg.addByte(skullTime < time(nullptr) + skullTime ? 0 : std::ceil(((double) skullTime - (double) time(nullptr)) / (double) 86400));
+	msg.addByte(skullTime < time(nullptr) + skullTime ? 0 : std::ceil(((double)skullTime - (double)time(nullptr)) / (double)86400));
 	writeToOutputBuffer(msg);
-}
+	}
 
 void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position& pos, int32_t stackpos, bool isLogin)
 {
@@ -621,8 +622,8 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 		msg.addByte(0x00);
 	}
 
-	msg.addByte(g_game.isExpertPvpEnabled()); // can change pvp framing option
-	msg.addByte(g_game.isExpertPvpEnabled()); // expert mode button enabled
+	msg.addByte(0x00); // can change pvp framing option
+	msg.addByte(0x00); // expert mode button enabled
 
 	msg.addString(g_config.getString(ConfigManager::STORE_IMAGES_URL));
 	msg.add<uint16_t>(static_cast<uint16_t>(g_config.getNumber(ConfigManager::STORE_COIN_PACKET)));

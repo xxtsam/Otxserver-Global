@@ -43,7 +43,10 @@ Monster* Monster::createMonster(const std::string& name)
 Monster::Monster(MonsterType* mtype) :
 	Creature()
 {
+	isIdle = true;
+	isMasterInRange = false;
 	mType = mtype;
+	spawn = nullptr;
 	defaultOutfit = mType->outfit;
 	currentOutfit = mType->outfit;
 
@@ -57,8 +60,23 @@ Monster::Monster(MonsterType* mtype) :
 
 	hiddenHealth = mType->hiddenHealth;
 
+	minCombatValue = 0;
+	maxCombatValue = 0;
+
+	targetTicks = 0;
+	targetChangeTicks = 0;
+	targetChangeCooldown = 0;
+	attackTicks = 0;
+	defenseTicks = 0;
+	yellTicks = 0;
+	extraMeleeAttack = false;
+
 	strDescription = mType->nameDescription;
 	toLowerCaseString(strDescription);
+
+	stepDuration = 0;
+
+	lastMeleeAttack = 0;
 
 	// register creature events
 	for (const std::string& scriptName : mType->scripts) {
@@ -810,7 +828,7 @@ bool Monster::canUseAttack(const Position& pos, const Creature* target) const
 		uint32_t distance = std::max<uint32_t>(Position::getDistanceX(pos, targetPos), Position::getDistanceY(pos, targetPos));
 		for (const spellBlock_t& spellBlock : mType->attackSpells) {
 			if (spellBlock.range != 0 && distance <= spellBlock.range) {
-				return g_game.isSightClear(pos, targetPos, true, const_cast<Creature*>(getCreature()));
+				return g_game.isSightClear(pos, targetPos, true);
 			}
 		}
 		return false;
@@ -928,17 +946,6 @@ void Monster::onThinkDefense(uint32_t interval)
 				continue;
 			}
 
-			uint32_t summonCount = 0;
-			for (Creature* summon : summons) {
-				if (summon->getName() == summonBlock.name) {
-					++summonCount;
-				}
-			}
-
-			if (summonCount >= summonBlock.max) {
-				continue;
-			}
-
 			if (summonBlock.chance < static_cast<uint32_t>(uniform_random(1, 100))) {
 				continue;
 			}
@@ -1007,7 +1014,7 @@ bool Monster::pushItem(Item* item)
 	for (const auto& it : relList) {
 		Position tryPos(centerPos.x + it.first, centerPos.y + it.second, centerPos.z);
 		Tile* tile = g_game.map.getTile(tryPos);
-		if (tile && g_game.canThrowObjectTo(centerPos, tryPos, true, 8, 6)) {
+		if (tile && g_game.canThrowObjectTo(centerPos, tryPos)) {
 			if (g_game.internalMoveItem(item->getParent(), tile, INDEX_WHEREEVER, item, item->getItemCount(), nullptr) == RETURNVALUE_NOERROR) {
 				return true;
 			}
@@ -1030,7 +1037,7 @@ void Monster::pushItems(Tile* tile)
 			Item* item = items->at(i);
 			if (item && item->hasProperty(CONST_PROP_MOVEABLE) && (item->hasProperty(CONST_PROP_BLOCKPATH)
 			        || item->hasProperty(CONST_PROP_BLOCKSOLID))) {
-				if (moveCount < 20 && pushItem(item)) {
+				if (moveCount < 20 && Monster::pushItem(item)) {
 					++moveCount;
 				} else if (g_game.internalRemoveItem(item) == RETURNVALUE_NOERROR) {
 					++removeCount;
@@ -1076,7 +1083,7 @@ void Monster::pushCreatures(Tile* tile)
 		for (size_t i = 0; i < creatures->size();) {
 			Monster* monster = creatures->at(i)->getMonster();
 			if (monster && monster->isPushable()) {
-				if (monster != lastPushedMonster && pushCreature(monster)) {
+				if (monster != lastPushedMonster && Monster::pushCreature(monster)) {
 					lastPushedMonster = monster;
 					continue;
 				}
@@ -1130,11 +1137,11 @@ bool Monster::getNextStep(Direction& direction, uint32_t& flags)
 		Tile* tile = g_game.map.getTile(pos);
 		if (tile) {
 			if (canPushItems()) {
-				pushItems(tile);
+				Monster::pushItems(tile);
 			}
 
 			if (canPushCreatures()) {
-				pushCreatures(tile);
+				Monster::pushCreatures(tile);
 			}
 		}
 	}
@@ -1255,7 +1262,7 @@ bool Monster::getDistanceStep(const Position& targetPos, Direction& direction, b
 
 	int32_t distance = std::max<int32_t>(dx, dy);
 
-	if (!flee && (distance > mType->targetDistance || !g_game.isSightClear(creaturePos, targetPos, true, getCreature()))) {
+	if (!flee && (distance > mType->targetDistance || !g_game.isSightClear(creaturePos, targetPos, true))) {
 		return false; // let the A* calculate it
 	} else if (!flee && distance == mType->targetDistance) {
 		return true; // we don't really care here, since it's what we wanted to reach (a dancestep will take of dancing in that position)
@@ -2015,42 +2022,4 @@ void Monster::getPathSearchParams(const Creature* creature, FindPathParams& fpp)
 	} else {
 		fpp.fullPathSearch = !canUseAttack(getPosition(), creature);
 	}
-}
-
-bool Monster::canAttack(Creature* creature) const
-{
-	if (!g_game.isExpertPvpEnabled() || !isSummon()) {
-		return true;
-	}
-
-	Player* owner = getMaster()->getPlayer();
-	if (!owner) {
-		return true;
-	}
-
-	return owner->canAttack(creature); // passing to owner's attack ability.
-}
-
-bool Monster::canWalkThroughTileItems(Tile* tile) const
-{
-	if (!g_game.isExpertPvpEnabled() || !tile) {
-		return true;
-	}
-
-	if (!isSummon() || !getMaster()->getPlayer()) {
-		TileItemVector* itemList = tile->getItemList();
-		if (!itemList) {
-			return true;
-		}
-
-		for (auto it : *itemList) {
-			if (it->getID() == ITEM_WILDGROWTH_NOPVP || it->getID() == ITEM_MAGICWALL_NOPVP) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	Player* owner = getMaster()->getPlayer();
-	return owner->canWalkThroughTileItems(tile);
 }

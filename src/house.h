@@ -232,7 +232,7 @@ class House
 		AccessList guestList;
 		AccessList subOwnerList;
 
-		Container transfer_container { ITEM_LOCKER1 };
+		Container transfer_container;
 
 		HouseTileList houseTiles;
 		std::list<Door*> doorList;
@@ -241,19 +241,19 @@ class House
 		std::string houseName;
 		std::string ownerName;
 
-		HouseTransferItem* transferItem = nullptr;
+		HouseTransferItem* transferItem;
 
-		time_t paidUntil = 0;
+		time_t paidUntil;
 
 		uint32_t id;
-		uint32_t owner = 0;
-		uint32_t rentWarnings = 0;
-		uint32_t rent = 0;
-		uint32_t townId = 0;
+		uint32_t owner;
+		uint32_t rentWarnings;
+		uint32_t rent;
+		uint32_t townId;
 
-		Position posEntry {};
+		Position posEntry;
 
-		bool isLoaded = false;
+		bool isLoaded;
 };
 
 typedef std::map<uint32_t, House*> HouseMap;

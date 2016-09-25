@@ -28,6 +28,13 @@
 extern ConfigManager g_config;
 Ban g_bans;
 
+ServiceManager::ServiceManager(): 
+	death_timer(io_service),
+	running(false)
+{
+	//
+}
+
 ServiceManager::~ServiceManager()
 {
 	stop();
@@ -68,8 +75,12 @@ void ServiceManager::stop()
 }
 
 ServicePort::ServicePort(boost::asio::io_service& io_service) :
-	io_service(io_service)
-{}
+	io_service(io_service),
+	serverPort(0),
+	pendingStart(false)
+{
+	//
+}
 
 ServicePort::~ServicePort()
 {

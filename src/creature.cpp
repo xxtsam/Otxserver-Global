@@ -33,8 +33,50 @@ extern Game g_game;
 extern ConfigManager g_config;
 extern CreatureEvents* g_creatureEvents;
 
-Creature::Creature()
+Creature::Creature() :
+	localMapCache(), isInternalRemoved(false)
 {
+	referenceCounter = 0;
+
+	id = 0;
+	tile = nullptr;
+	direction = DIRECTION_SOUTH;
+	master = nullptr;
+	lootDrop = true;
+	skillLoss = true;
+
+	health = 1000;
+	healthMax = 1000;
+	mana = 0;
+
+	lastStep = 0;
+	lastStepCost = 1;
+	baseSpeed = 220;
+	varSpeed = 0;
+
+	followCreature = nullptr;
+	hasFollowPath = false;
+	eventWalk = 0;
+	cancelNextWalk = false;
+	forceUpdateFollowPath = false;
+	isMapLoaded = false;
+	isUpdatingPath = false;
+
+	attackedCreature = nullptr;
+
+	lastHitCreatureId = 0;
+	blockCount = 0;
+	blockTicks = 0;
+	walkUpdateTicks = 0;
+	creatureCheck = false;
+	inCheckCreaturesVector = false;
+	scriptEventsBitField = 0;
+
+	hiddenHealth = false;
+	moveLocked = false;
+
+	skull = SKULL_NONE;
+
 	onIdleStatus();
 }
 
@@ -174,7 +216,7 @@ void Creature::onAttacking(uint32_t interval)
 	onAttacked();
 	attackedCreature->onAttacked();
 
-	if (g_game.isSightClear(getPosition(), attackedCreature->getPosition(), true, const_cast<Creature*>(this))) {
+	if (g_game.isSightClear(getPosition(), attackedCreature->getPosition(), true)) {
 		doAttacking(interval);
 	}
 }
@@ -494,6 +536,7 @@ void Creature::onCreatureMove(Creature* creature, const Tile* newTile, const Pos
 			} else {
 				Tile* tile;
 				const Position& myPos = getPosition();
+				Position pos;
 
 				if (oldPos.y > newPos.y) { //north
 					//shift y south
@@ -829,7 +872,7 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 		if (checkArmor) {
 			int32_t armor = getArmor();
 			if (armor > 3) {
-				damage -= uniform_random(armor / 2, armor - (armor % 2 + 1));
+				damage -= uniform_random(armor / 2, (armor % 2) == 0 ? armor - 1 : armor - 2);
 			} else if (armor > 0) {
 				--damage;
 			}
@@ -940,14 +983,7 @@ bool Creature::setFollowCreature(Creature* creature)
 		}
 
 		const Position& creaturePos = creature->getPosition();
-		FindPathParams fpp;
-		fpp.minTargetDist = 0;
-		fpp.maxTargetDist = 1;
-		fpp.fullPathSearch = true;
-		fpp.clearSight = true;
-		fpp.maxSearchDist = 150;
-		std::forward_list<Direction> dirList;
-		if (creaturePos.z != getPosition().z || !canSee(creaturePos) || !getPathTo(creaturePos, dirList, fpp)) {
+		if (creaturePos.z != getPosition().z || !canSee(creaturePos)) {
 			followCreature = nullptr;
 			return false;
 		}

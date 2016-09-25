@@ -30,6 +30,11 @@ extern Events* g_events;
 
 Party::Party(Player* leader)
 {
+	extraExpRate = 0.20f;
+
+	sharedExpActive = false;
+	sharedExpEnabled = false;
+
 	this->leader = leader;
 	leader->setParty(this);
 }

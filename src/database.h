@@ -30,7 +30,7 @@ typedef std::shared_ptr<DBResult> DBResult_ptr;
 class Database
 {
 	public:
-		Database() = default;
+		Database();
 		~Database();
 
 		// non-copyable
@@ -130,9 +130,9 @@ class Database
 		bool commit();
 
 	private:
-		MYSQL* handle = nullptr;
+		MYSQL* handle;
 		std::recursive_mutex databaseLock;
-		uint64_t maxPacketSize = 1048576;
+		uint64_t maxPacketSize;
 
 	friend class DBTransaction;
 };

@@ -23,7 +23,7 @@
 class ScriptingManager
 {
 	public:
-		ScriptingManager() = default;
+		ScriptingManager();
 		~ScriptingManager();
 
 		// non-copyable

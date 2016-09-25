@@ -87,14 +87,14 @@ class ServicePort : public std::enable_shared_from_this<ServicePort>
 		std::unique_ptr<boost::asio::ip::tcp::acceptor> acceptor;
 		std::vector<Service_ptr> services;
 
-		uint16_t serverPort = 0;
-		bool pendingStart = false;
+		uint16_t serverPort;
+		bool pendingStart;
 };
 
 class ServiceManager
 {
 	public:
-		ServiceManager() = default;
+		ServiceManager();
 		~ServiceManager();
 
 		// non-copyable
@@ -117,8 +117,8 @@ class ServiceManager
 		std::unordered_map<uint16_t, ServicePort_ptr> acceptors;
 
 		boost::asio::io_service io_service;
-		boost::asio::deadline_timer death_timer { io_service };
-		bool running = false;
+		boost::asio::deadline_timer death_timer;
+		bool running;
 };
 
 template <typename ProtocolType>

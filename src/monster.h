@@ -173,9 +173,6 @@ class Monster final : public Creature
 			return stepDuration >= 1;
 		}
 
-		bool canAttack(Creature* creature) const final;
-		bool canWalkThroughTileItems(Tile* tile) const final;
-
 		BlockType_t blockHit(Creature* attacker, CombatType_t combatType, int32_t& damage,
 		                     bool checkDefense = false, bool checkArmor = false, bool field = false);
 
@@ -188,25 +185,25 @@ class Monster final : public Creature
 		std::string strDescription;
 
 		MonsterType* mType;
-		Spawn* spawn = nullptr;
+		Spawn* spawn;
 
-		int64_t lastMeleeAttack = 0;
+		int64_t lastMeleeAttack;
 
-		uint32_t attackTicks = 0;
-		uint32_t targetTicks = 0;
-		uint32_t targetChangeTicks = 0;
-		uint32_t defenseTicks = 0;
-		uint32_t yellTicks = 0;
-		int32_t minCombatValue = 0;
-		int32_t maxCombatValue = 0;
+		uint32_t attackTicks;
+		uint32_t targetTicks;
+		uint32_t targetChangeTicks;
+		uint32_t defenseTicks;
+		uint32_t yellTicks;
+		int32_t minCombatValue;
+		int32_t maxCombatValue;
 		int32_t targetChangeCooldown;
-		int32_t stepDuration = 0;
+		int32_t stepDuration;
 
 		Position masterPos;
 
-		bool isIdle = true;
-		bool extraMeleeAttack = false;
-		bool isMasterInRange = false;
+		bool isIdle;
+		bool extraMeleeAttack;
+		bool isMasterInRange;
 
 		void onCreatureEnter(Creature* creature);
 		void onCreatureLeave(Creature* creature);
@@ -245,10 +242,10 @@ class Monster final : public Creature
 		bool isInSpawnRange(const Position& pos) const;
 		bool canWalkTo(Position pos, Direction direction) const;
 
-		bool pushItem(Item* item);
-		void pushItems(Tile* tile);
-		bool pushCreature(Creature* creature);
-		void pushCreatures(Tile* tile);
+		static bool pushItem(Item* item);
+		static void pushItems(Tile* tile);
+		static bool pushCreature(Creature* creature);
+		static void pushCreatures(Tile* tile);
 
 		void onThinkTarget(uint32_t interval);
 		void onThinkYell(uint32_t interval);
