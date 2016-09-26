@@ -80,14 +80,14 @@ typedef std::map<Position, SpectatorVec> SpectatorCache;
 #define FLOOR_MASK (FLOOR_SIZE - 1)
 
 struct Floor {
-	Floor() : tiles() {}
+	Floor() = default;
 	~Floor();
 
 	// non-copyable
 	Floor(const Floor&) = delete;
 	Floor& operator=(const Floor&) = delete;
 
-	Tile* tiles[FLOOR_SIZE][FLOOR_SIZE];
+	Tile* tiles[FLOOR_SIZE][FLOOR_SIZE] = {{ nullptr }};
 };
 
 class FrozenPathingConditionCall;
@@ -172,8 +172,6 @@ class QTreeLeafNode final : public QTreeNode
 class Map
 {
 	public:
-		Map() : width(0), height(0) {}
-
 		static const int32_t maxViewportX = 11; //min value: maxClientViewportX + 1
 		static const int32_t maxViewportY = 11; //min value: maxClientViewportY + 1
 		static const int32_t maxClientViewportX = 8;
@@ -237,7 +235,7 @@ class Map
 		  *	\returns The result if you can throw there or not
 		  */
 		bool canThrowObjectTo(const Position& fromPos, const Position& toPos, bool checkLineOfSight = true,
-		                      int32_t rangex = Map::maxClientViewportX, int32_t rangey = Map::maxClientViewportY) const;
+		                      int32_t rangex = Map::maxClientViewportX, int32_t rangey = Map::maxClientViewportY, Creature* creature = nullptr) const;
 
 		/**
 		  * Checks if path is clear from fromPos to toPos
@@ -247,8 +245,8 @@ class Map
 		  *	\param floorCheck if true then view is not clear if fromPos.z is not the same as toPos.z
 		  *	\returns The result if there is no obstacles
 		  */
-		bool isSightClear(const Position& fromPos, const Position& toPos, bool floorCheck) const;
-		bool checkSightLine(const Position& fromPos, const Position& toPos) const;
+		bool isSightClear(const Position& fromPos, const Position& toPos, bool floorCheck, Creature* caster = nullptr) const;
+		bool checkSightLine(const Position& fromPos, const Position& toPos, Creature* caster = nullptr) const;
 
 		const Tile* canWalkTo(const Creature& creature, const Position& pos) const;
 
@@ -273,7 +271,8 @@ class Map
 		std::string spawnfile;
 		std::string housefile;
 
-		uint32_t width, height;
+		uint32_t width = 0;
+		uint32_t height = 0;
 
 		// Actually scans the map for spectators
 		void getSpectatorsInternal(SpectatorVec& list, const Position& centerPos,

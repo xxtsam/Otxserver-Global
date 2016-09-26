@@ -24,6 +24,8 @@
 #include "condition.h"
 #include "map.h"
 #include "baseevents.h"
+#include "player.h"
+#include "monster.h"
 
 class Condition;
 class Creature;
@@ -61,42 +63,26 @@ class TargetCallback final : public CallBack
 };
 
 struct CombatParams {
-	CombatParams() {
-		dispelType = CONDITION_NONE;
-		combatType = COMBAT_NONE;
-
-		blockedByArmor = false;
-		blockedByShield = false;
-		targetCasterOrTopMost = false;
-		aggressive = true;
-		itemId = 0;
-		impactEffect = CONST_ME_NONE;
-		distanceEffect = CONST_ANI_NONE;
-		useCharges = false;
-
-		origin = ORIGIN_SPELL;
-	}
-
 	std::forward_list<std::unique_ptr<const Condition>> conditionList;
 
 	std::unique_ptr<ValueCallback> valueCallback;
 	std::unique_ptr<TileCallback> tileCallback;
 	std::unique_ptr<TargetCallback> targetCallback;
 
-	uint16_t itemId;
+	uint16_t itemId = 0;
 
-	ConditionType_t dispelType;
-	CombatType_t combatType;
-	CombatOrigin origin;
+	ConditionType_t dispelType = CONDITION_NONE;
+	CombatType_t combatType = COMBAT_NONE;
+	CombatOrigin origin = ORIGIN_SPELL;
 
-	uint8_t impactEffect;
-	uint8_t distanceEffect;
+	uint8_t impactEffect = CONST_ANI_NONE;
+	uint8_t distanceEffect = CONST_ANI_NONE;
 
-	bool blockedByArmor;
-	bool blockedByShield;
-	bool targetCasterOrTopMost;
-	bool aggressive;
-	bool useCharges;
+	bool blockedByArmor = false;
+	bool blockedByShield = false;
+	bool targetCasterOrTopMost = false;
+	bool aggressive = true;
+	bool useCharges = false;
 };
 
 typedef void (*COMBATFUNC)(Creature*, Creature*, const CombatParams&, CombatDamage*);
@@ -192,9 +178,8 @@ class MatrixArea
 class AreaCombat
 {
 	public:
-		AreaCombat() {
-			hasExtArea = false;
-		}
+		AreaCombat() = default;
+
 		AreaCombat(const AreaCombat& rhs);
 		~AreaCombat() {
 			clear();
@@ -203,7 +188,7 @@ class AreaCombat
 		// non-assignable
 		AreaCombat& operator=(const AreaCombat&) = delete;
 
-		void getList(const Position& centerPos, const Position& targetPos, std::forward_list<Tile*>& list) const;
+		void getList(const Position& centerPos, const Position& targetPos, std::forward_list<Tile*>& list, Creature* creature = nullptr) const;
 
 		void setupArea(const std::list<uint32_t>& list, uint32_t rows);
 		void setupArea(int32_t length, int32_t spread);
@@ -259,13 +244,13 @@ class AreaCombat
 		}
 
 		std::map<Direction, MatrixArea*> areas;
-		bool hasExtArea;
+		bool hasExtArea = false;
 };
 
 class Combat
 {
 	public:
-		Combat();
+		Combat() = default;
 
 		// non-copyable
 		Combat(const Combat&) = delete;
@@ -283,7 +268,7 @@ class Combat
 		static void doCombatDispel(Creature* caster, Creature* target, const CombatParams& params);
 		static void doCombatDispel(Creature* caster, const Position& position, const AreaCombat* area, const CombatParams& params);
 
-		static void getCombatArea(const Position& centerPos, const Position& targetPos, const AreaCombat* area, std::forward_list<Tile*>& list);
+		static void getCombatArea(const Position& centerPos, const Position& targetPos, const AreaCombat* area, std::forward_list<Tile*>& list, Creature* caster = nullptr);
 
 		static bool isInPvpZone(const Creature* attacker, const Creature* target);
 		static bool isProtected(const Player* attacker, const Player* target);
@@ -297,8 +282,8 @@ class Combat
 
 		static void addDistanceEffect(Creature* caster, const Position& fromPos, const Position& toPos, uint8_t effect);
 
-		void doCombat(Creature* caster, Creature* target) const;
-		void doCombat(Creature* caster, const Position& pos) const;
+		bool doCombat(Creature* caster, Creature* target) const;
+		bool doCombat(Creature* caster, const Position& pos) const;
 
 		bool setCallback(CallBackParam_t key);
 		CallBack* getCallback(CallBackParam_t key);
@@ -340,11 +325,11 @@ class Combat
 		CombatParams params;
 
 		//formula variables
-		formulaType_t formulaType;
-		double mina;
-		double minb;
-		double maxa;
-		double maxb;
+		formulaType_t formulaType = COMBAT_FORMULA_UNDEFINED;
+		double mina = 0.0;
+		double minb = 0.0;
+		double maxa = 0.0;
+		double maxb = 0.0;
 
 		std::unique_ptr<AreaCombat> area;
 };
@@ -354,6 +339,8 @@ class MagicField final : public Item
 	public:
 		explicit MagicField(uint16_t type) : Item(type) {
 			createTime = OTSYS_TIME();
+			pvpMode = PVP_MODE_DOVE;
+			isCasterPlayer = false;
 		}
 
 		MagicField* getMagicField() final {
@@ -372,6 +359,8 @@ class MagicField final : public Item
 		}
 		void onStepInField(Creature* creature);
 
+		pvpMode_t pvpMode;
+		bool isCasterPlayer;
 	private:
 		int64_t createTime;
 };

@@ -89,7 +89,6 @@ class ProtocolGameBase : public Protocol {
 		//inventory
 		void sendInventoryItem(slots_t slot, const Item* item);
 		void sendInventoryClientIds();
-
 		// Skull Time
 		void sendSkullTime();
 

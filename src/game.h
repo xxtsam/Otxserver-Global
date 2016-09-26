@@ -411,8 +411,8 @@ class Game
 		void ReleaseItem(Item* item);
 
 		bool canThrowObjectTo(const Position& fromPos, const Position& toPos, bool checkLineOfSight = true,
-		                      int32_t rangex = Map::maxClientViewportX, int32_t rangey = Map::maxClientViewportY) const;
-		bool isSightClear(const Position& fromPos, const Position& toPos, bool sameFloor) const;
+		                      int32_t rangex = Map::maxClientViewportX, int32_t rangey = Map::maxClientViewportY, Creature* creature = nullptr) const;
+		bool isSightClear(const Position& fromPos, const Position& toPos, bool sameFloor, Creature* caster = nullptr) const;
 
 		void changeSpeed(Creature* creature, int32_t varSpeedDelta);
 		void internalCreatureChangeOutfit(Creature* creature, const Outfit_t& oufit);
@@ -498,6 +498,9 @@ class Game
 		bool addUniqueItem(uint16_t uniqueId, Item* item);
 		void removeUniqueItem(uint16_t uniqueId);
 
+		bool isExpertPvpEnabled();
+		void updateSpectatorsPvp(Thing* thing);
+
 		bool hasEffect(uint8_t effectId);
 		bool hasDistanceEffect(uint8_t effectId);
 
@@ -522,7 +525,7 @@ class Game
 		std::unordered_map<std::string, Player*> mappedPlayerNames;
 		std::unordered_map<uint32_t, Guild*> guilds;
 		std::unordered_map<uint16_t, Item*> uniqueItems;
-		std::map<uint32_t, uint32_t> stages;
+		std::map<uint32_t, float> stages;
 
 		std::list<Item*> decayItems[EVENT_DECAY_BUCKETS];
 		std::list<Creature*> checkCreatureLists[EVENT_CREATURECOUNT];
@@ -533,9 +536,9 @@ class Game
 		std::vector<Item*> ToReleaseItems;
 		std::vector<char> commandTags;
 
-		size_t lastBucket;
+		size_t lastBucket = 0;
 
-		WildcardTreeNode wildcardTree;
+		WildcardTreeNode wildcardTree { false };
 
 		std::map<uint32_t, Npc*> npcs;
 		std::map<uint32_t, Monster*> monsters;
@@ -545,7 +548,7 @@ class Game
 
 		std::map<uint32_t, BedItem*> bedSleepersMap;
 
-		ModalWindow offlineTrainingWindow;
+		ModalWindow offlineTrainingWindow { std::numeric_limits<uint32_t>::max(), "Choose a Skill", "Please choose a skill:" };
 		Commands commands;
 
 		static const int32_t LIGHT_LEVEL_DAY = 250;
@@ -553,25 +556,26 @@ class Game
 		static const int32_t SUNSET = 1305;
 		static const int32_t SUNRISE = 430;
 
-		GameState_t gameState;
-		WorldType_t worldType;
+		GameState_t gameState = GAME_STATE_NORMAL;
+		WorldType_t worldType = WORLD_TYPE_PVP;
 
-		LightState_t lightState;
-		uint8_t lightLevel;
-		int32_t lightHour;
-		int32_t lightHourDelta;
+		LightState_t lightState = LIGHT_STATE_DAY;
+		uint8_t lightLevel = LIGHT_LEVEL_DAY;
+		int32_t lightHour = SUNRISE + (SUNSET - SUNRISE) / 2;
+		// (1440 minutes/day)/(3600 seconds/day)*10 seconds event interval
+		int32_t lightHourDelta = 1400 * 10 / 3600;
 
-		ServiceManager* serviceManager;
+		ServiceManager* serviceManager = nullptr;
 
 		void updatePlayersRecord() const;
-		uint32_t playersRecord;
+		uint32_t playersRecord = 0;
 
 		std::string motdHash;
-		uint32_t motdNum;
+		uint32_t motdNum = 0;
 
-		uint32_t lastStageLevel;
-		bool stagesEnabled;
-		bool useLastStageLevel;
+		uint32_t lastStageLevel = 0;
+		bool stagesEnabled = false;
+		bool useLastStageLevel = false;
 };
 
 #endif
