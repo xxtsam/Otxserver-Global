@@ -13,14 +13,14 @@
  	<movevent event="StepIn" fromaid="13510" toaid="13529" script="others/movimento1094.lua"/>
 
  <!-- Ferumbras Ancendant Quest -->
-	<movevent event="StepIn" actionid="51991" script="others/ferumbras1.lua" />
-	<movevent event="StepIn" actionid="51992" script="others/ferumbras2.lua" />
-	<movevent event="StepIn" actionid="51993" script="others/ferumbras3.lua" />
-	<movevent event="StepIn" actionid="51994" script="others/ferumbras4.lua" />
-	<movevent event="StepIn" actionid="51995" script="others/ferumbras5.lua" />
-	<movevent event="StepIn" actionid="51996" script="others/ferumbras6.lua" />
-	<movevent event="StepIn" actionid="51997" script="others/ferumbras7.lua" />
-	<movevent event="StepIn" actionid="51998" script="others/ferumbras8.lua" />
+	<movevent event="StepIn" actionid="51991" script="others/ferumbras1.lua" />   	<!-- Tarbaz --> 
+	<movevent event="StepIn" actionid="51992" script="others/ferumbras2.lua" />		<!-- Shulgrax --> 
+	<movevent event="StepIn" actionid="51993" script="others/ferumbras3.lua" />		<!-- Plagirat -->
+	<movevent event="StepIn" actionid="51994" script="others/ferumbras4.lua" />		<!-- Zamulosh --> 
+	<movevent event="StepIn" actionid="51995" script="others/ferumbras5.lua" />		<!-- Mazoran --> 
+	<movevent event="StepIn" actionid="51996" script="others/ferumbras6.lua" />		<!-- Razzagorn --> 
+	<movevent event="StepIn" actionid="51997" script="others/ferumbras7.lua" />		<!-- Ragiaz --> 
+	<movevent event="StepIn" actionid="51998" script="others/ferumbras8.lua" />		<!-- xxx -->
 	
 	<!-- BattleField Event -->
 	<movevent event="StepIn" actionid="45000" script="battlefield.lua" />
@@ -115,6 +115,7 @@
 
 	<!-- Ferumbras Quest by Ciroc -->
 	<movevent event="StepIn" actionid="45790" script="ferumbrasEntrada.lua"/>
+	<movevent event="StepIn" actionid="45798" script="ferumbrasFinal.lua"/>
 
 	<!-- KillingOfTheNameOf -->
 	<movevent event="StepIn" fromuid="3230" touid="3259" script="quests/killing in the name of/boss.lua" />
