@@ -664,8 +664,8 @@ Storage = {
 		MissionTiquandasRevenge = 22222,
 		TiquandasRevengeTeleport = 22555,
 		MissionDemodras = 22223,
-		DemodrasTeleport = 22556
-
+		DemodrasTeleport = 22556,
+		BudrikMinos = 12700
 	},
 	QueenOfBansheesQuest = {
 		FirstSeal = 50013,
