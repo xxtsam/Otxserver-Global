@@ -658,8 +658,8 @@ Storage = {
 		TheCounterspell = 12710
 	},
 	KillingInTheNameOf = {
-		LugriNecromancers = 50000,
-		LugriNecromancerCount = 50001,
+		LugriNecromancers = 65050,
+		LugriNecromancerCount = 65051,
 
 		MissionTiquandasRevenge = 22222,
 		TiquandasRevengeTeleport = 22555,

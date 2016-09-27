@@ -348,8 +348,8 @@
 		<mission name="Paw and Fur: Pirates" storageid="65047" startvalue="0" endvalue="3000" description="You already hunted |STATE|/3000 pirates." />
 		<mission name="Paw and Fur: Pirates Second" storageid="65048" startvalue="0" endvalue="3000" description="You already hunted |STATE|/3000 pirates." />
 		<mission name="Paw and Fur: Minotaurs" storageid="65049" startvalue="0" endvalue="5000" description="You already hunted |STATE|/5000 minotaurs." />
-		<mission name="Paw and Fur: Necromancers and Priestess" storageid="50001" startvalue="0" endvalue="4000" description="You already hunted |STATE|/4000 necromancers and priestess." />
-		<mission name="Paw and Fur: Necromancers and Priestess Second" storageid="50001" startvalue="0" endvalue="1000" description="You already hunted |STATE|/1000 necromancers and priestess." />
+		<mission name="Paw and Fur: Necromancers and Priestess" storageid="65051" startvalue="0" endvalue="4000" description="You already hunted |STATE|/4000 necromancers and priestess." />
+		<mission name="Paw and Fur: Necromancers and Priestess Second" storageid="65051" startvalue="0" endvalue="1000" description="You already hunted |STATE|/1000 necromancers and priestess." />
 	</quest>
 	<quest name="Outfit and Addon Quests" startstorageid="12010" startstoragevalue="1">
 		<mission name="Assassin Addon: The Red Death" storageid="50082" startvalue="1" endvalue="2">
