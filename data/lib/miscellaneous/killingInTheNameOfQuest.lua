@@ -76,7 +76,7 @@ tasks =
 	[48] = {killsRequired = 3000, raceName = "Pirates second task", level = {1, 9999}, storage = {REPEATSTORAGE_BASE + 47, 3}, norepeatable = true, premium = true, creatures = {"pirate ghost", "pirate marauder", "pirate cutthroad", "pirate buccaneer", "pirate corsair", "pirate skeleton"}, rewards = {{type = "exp", value = {10000}},{type = "money", value = {5000}},{type = "storage", value = {35031, 1}}}},
 	[49] = {killsRequired = 5000, raceName = "Minotaurs", level = {1, 40}, storage = {12700, 1}, norepeatable = true, premium = false, creatures = {"minotaur", "minotaur mage", "minotaur archer"}, rewards = {{type = "storage", value = {35032, 1}}}},	
 	[51] = {killsRequired = 4000, raceName = "Necromancers and Priestess", level = {60, 9999}, norepeatable = true, premium = true, creatures = {"necromancer", "priestess"}, rewards = {{type = "storage", value = {35033, 1}},{type = "storage", value = {12800, 1}}}},
-	[51] = {killsRequired = 1000, name = "Necromancers and Priestess second task", raceName = "Necromancers and Priestess", level = {60, 9999}, storage = {12800, 1}, norepeatable = true, premium = true, creatures = {"necromancer", "priestess"}, rewards = {{type = "exp", value = {40000}},{type = "storage", value = {35033, 1}}}},
+	[52] = {killsRequired = 1000, name = "Necromancers and Priestess second task", raceName = "Necromancers and Priestess", level = {60, 9999}, storage = {12800, 1}, norepeatable = true, premium = true, creatures = {"necromancer", "priestess"}, rewards = {{type = "exp", value = {40000}},{type = "storage", value = {35033, 1}}}},
 }
 
 tasksByPlayer = 3
