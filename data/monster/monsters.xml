@@ -210,6 +210,7 @@
 	<monster name="Glooth Battery" file="electro-elementals/glooth battery.xml"/>
 	<monster name="Control Tower" file="electro-elementals/control tower.xml"/>
 	<monster name="High Voltage Elemental" file="electro-elementals/high voltage elemental.xml"/>
+	<monster name="Rift Invader" file="1090/Rift Invader.xml"/>
 	
 	<!-- Elemental Lords -->
 	<monster name="Earth Overlord" file="elemental lords/earth overlord.xml"/>
